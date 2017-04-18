@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>css样式</title>
+    <style>
+    /* 后代选择器 div里的p标签*/
+       div p{
+         color:pink;
+         font-size:80px;
+       }
+       div p span{
+         color:orange;
+       }
+       /* 交集选择器 在一个块内出现多个同名标签时，需要设置某一个标签时*/
+       div p.cll{
+         font-size:50px;
+       }
+       /* 并集选择器 将多个不同类型的标签合在一起设置*/
+       h4, h6{
+         color:blue;
+       }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>jfsdklgjdsklgjdslk</p>
+      <div>
+     <p>123456<span>hhhhhh</span></p>
+   </div>
+   </div>
+  <div>
+     <p class="cll"> niaho</p>
+     <p> hihihi</p>
+     <p> hello</p>
+  </div>
+  <div>
+     <h4> 哈哈哈哈</h4>
+     <h6> 号楼打开</h6>
+     <span> 哈佛斯塔克</span>
+  </div>
+  </body>
+</html>
