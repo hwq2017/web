@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    .f1{
+      width: 300px;
+      height: 200px;
+      background-color: red;
+      /*相对于自己的位置发生偏移 */
+      /*相对定位*/
+      position: relative;
+
+      top: 30px;  /*距离原先的顶部距离为30px*/
+      left:30px;  /*距离原先距离的左距离为30px*/
+    }
+
+
+    /**/
+    .f2{
+      width: 500px;
+      height: 300px;
+      background-color: green;
+
+
+      /*绝对定位
+      该元素脱离了标准流
+      f2 的父元素为body ，那么它的绝对定位都是相对于body的*/
+      position: absolute;
+      top: 100px;
+      left: 200px;
+    }
+    .f3{
+      width: 400px;
+      height: 200px;
+      background-color: blue;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+
+    }
+    .s{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+
+      /*
+      1. 对s设置了absolute，但是s的祖元素都没有设置position
+      那么，s绝对定位是相对于body
+
+      2. 对s设置了absolute，同时s 的某一个祖先元素设置过position
+      那么，s 的绝对定位都是相对于最近设置过定位的祖先
+      */
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="f1"></div>
+  <div class="f2">
+  <div class="f3">
+    <div class="s">
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

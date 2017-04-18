@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    .f1{
+      width: 300px;
+      height: 200px;
+      background-color: red;
+      float: left;
+    }
+    .f2{
+      width: 500px;
+      height: 200px;
+      background-color: blue;
+/* 设置浮动时，需要注意它前一个元素是否有浮动，上一个元素无浮动的话，则此元素不浮动，
+上设置浮动，此元素不设置浮动，此会被覆盖*/
+/*元素变为行内块元素，具有行和块的特点*/
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="f1"></div>
+  <div class="f2">dfsaf</div>
+</body>
+</html>

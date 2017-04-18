@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本外观</title>
+  <style>
+  div{
+    font-size: 30px;
+    /* color 属性取值的三种方式 */
+    /*color:orange;*/
+    color:#ffbbaa;   /*最常用是 采用十六进制设置颜色 */
+    /*color:rgb(120, 12, 34);  /*三原色红绿蓝的取值范围是0-255*/*/
+  }
+  .one{
+    letter-spacing: 12px;/*定义字符间距，允许为负值，默认normal*/
+    line-height: 40px;
+    text-decoration: none;
+    text-indent: 2em;/*首行缩进，可为负值，一般使用em，em为字符宽度的倍数*/
+  }
+    .two{
+    word-spacing: 20px; /*定义英文单词之间的间距*/
+    text-decoration: underline;/*设置文本的下划线(underline)，上划线(overline)，删除线(line-through)，或没有装饰(normal)*/
+    }
+    #pi{
+    text-decoration: line-through overline; /*text-decoration 后可以赋多个值*/
+    text-align: center; /*水平对齐方式*/
+    }
+
+    img {
+      vertical-align: middle;/*垂直对齐方式*/
+    }
+  </style>
+</head>
+<body>
+<div>
+  <p class="one">你好你好你好你好你好快乐大本营 <br/>
+  号好大家否代理费家连锁店</p>
+  <p class="two" id="pi">hello world</p>
+</div>
+<p><image src="../../../Downloads/1.jpg">大家好</p>
+</body>
+</html>
