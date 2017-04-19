@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js中的数据类型</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  // typeof 是输出一个值的类型，返回值是字符串
+    var a = "mmmmm";
+    console.log(typeof a); // string
+
+    var b = "";
+    console.log(b);
+    console.log(typeof b); //string
+
+    var c = 345;
+    console.log(typeof c);
+
+    var d ;
+    console.log(d); // undefined
+    console.log(typeof d); //undefined
+
+    var e = undefined;
+    console.log(e); // undefined
+    console.log(typeof e); //undefined
+
+    var f =  null;
+    console.log(f); //null
+    console.log(typeof f); //object
+
+    var g = function (){
+       console.log(".....");
+    };
+    console.log(g); // function () { console.log(".....");}
+    console.log(typeof g);// function
+  </script>
+</body>
+</html>
