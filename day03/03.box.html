@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0px;
+    padding:0px;
+  }
+  .f1,.f2{
+    width:500px;
+    height:100px;
+    border:5px solid red;
+  }
+  /*上下外边距合并问题，取最大的值，作为上下间距*/
+  .f1{
+    margin-bottom:10px;
+  }
+  .f2{
+    margin-top:50px;
+    /*将左右边距设置为auto(只在左右方向有用)，可以实现在父元素内的水平居中*/
+    /*margin: 10px auto;*/
+  }
+  .f3{
+    width:500px;
+    height: 300px;
+    background-color: red;
+    margin-top: 10px;
+
+    /*解决嵌套外边距合并问题，2种方法  子元素f4里margin属性必须有*/
+
+    /*方法一*/
+    /*padding-top: 1px;*/
+    /*方法二*/
+    border-top: 5px solid yellow;
+  }
+  .f4{
+    width: 200px;
+    height: 100px;
+    margin: 50px auto;
+    background-color: green;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="f1">来看待赛冠军落实党风建设力度咖啡</div>
+  <div class="f2">打开了改进了开设的废旧塑料打法</div>
+  <div class="f3">
+    <div class="f4">
+
+    </div>
+  </div>
+</body>
+</html>

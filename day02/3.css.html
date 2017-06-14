@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+  <head>
+  <meta charset="utf8">
+  <title>css三大特性之 继承</title>
+  <style>
+  /* 页面中一些标签的属性可以继承给子标签，但是有些是由限制的，例如：a 的颜色，块级元素的高度等
+   */
+  div {
+     font-size:50px;
+     color:purple;
+     height:200px;
+  }
+  </style>
+  </head>
+  <body>
+    <h1>nihao shijie</h1>
+    <div>
+      <p>你好<span>北京</span></p>
+      <a href="#">HHHH</a>
+       <!-- h 标签的字体大小 = 当前设置的字体大小 * 对应的比例 (h 标签的对应比例为2em) 
+          1em = 当前设置的字体大小的像素值px-->
+       <h1>hello world</h1>
+    </div>
+  </body>
+</html>

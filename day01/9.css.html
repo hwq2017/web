@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf8"/>
+    <title>CSS</title>
+    <style>
+    /* 通配选择器，能匹配页面中所有的元素，当一个页面中有多个选择器且选择器里的属性名和通配选择器的
+    里的属性名一样时，就选择其他选择器*/
+    * {
+      background:pink;
+      font-size:50px;
+    }
+    /* 标签选择器，将页面中的同类型的标签统一样式，不利于差异设计*/
+      h3{
+         color:blue;
+         font-size:30px;
+       }
+       /* 类选择器可以为元素定义单独样式，也可以相同样式*/
+       .red{
+         color:red;
+       }
+       /* id选择器，html元素的id是唯一的，使用id选择器只对应某个元素*/
+       #fonts{
+         font-size:40px;
+         color:orange;
+       }   
+
+
+    </style>
+  </head>
+  <body>
+    <h3>hello world</h3>
+    <h3 class="red">hello world</h3>
+    <h3 class="red">hello world</h3>
+    <p id="fonts">这是一段话</p>
+  </body>
+</html>

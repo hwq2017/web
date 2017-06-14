@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>消除浮动的影响</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .clearfix::after, .clearfix::before {
+      content: "";
+      height: 0;
+      display: block;
+      visibility: hidden;
+      line-height: 0;
+      clear: both;
+    }
+     /*第四种消除浮动的方法  使用伪元素*/
+    .clearfix {
+      zoom: 1;
+     }
+    .nav{
+      list-style: none;
+
+      /*第一种消除浮动的方法*/
+      /*height: 50px;*/
+      /*第二种消除浮动的方法*/
+      /*overflow: hidden;*/
+
+    }
+    .nav li{
+      background: red;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;   /*line-height = height 使字体垂直居中*/
+      margin-right:10px;
+
+      float: left;
+    }
+
+    /*第三种消除浮动的方法*/
+    /*.nav div{
+      clear: both;
+    }*/
+  </style>
+</head>
+<body>
+  <ul class="nav clearfix">
+    <li>花生</li>
+    <li>大米</li>
+    <li>八宝周</li>
+    <li>油条</li>
+    <div></div>
+  </ul>
+  <p>看大家分开了赛冠军</p>
+</body>
+</html>

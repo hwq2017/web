@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+
+    /*display属性可以让块元素和行元素互相转换*/
+    /*将俩个元素设置为行内块元素时，会底部在统一水平线水平对齐*/
+    .f{
+      width: 100px;
+      height: 100px;
+      background: blue;
+
+      /*将块元素转化为行元素，如果块元素里没有内容，此时转化成的行元素就为空，会被后面的元素覆盖*/
+      /*display: inline;  */
+
+      display: inline-block;
+    }
+    .s{
+      width: 100px;
+      height: 200px;
+      background: red;
+      display: inline-block;
+    }
+    .c {
+      width: 300px;
+      height: 100px;
+      background: pink;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="f"></div>
+  <div class="s"></div>
+  <span class="c">行变块</span>
+</body>
+</html>

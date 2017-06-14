@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    var a = 2;
+    var b = "huang";
+
+
+   // 在函数中定义变量，外面无法访问到，说明函数中定义的变量是局部变量，全局无法访问
+   
+  /*  function fun() {
+       var c = "kdjg";
+       }
+      console.log(c); */ //报错
+
+
+    //可以访问到if里的变量d，说明普通{}是不区分作用域的
+    if(1)
+    {
+      var d = "hihihi";
+    }
+
+     console.log(d);
+
+  </script>
+</body>
+</html>
