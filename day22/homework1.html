@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <style media="screen">
+    .time{
+      width: 700px;
+      height: 100px;
+      margin: 100px auto;
+      background: rgba(12,23,45,0.5);
+      color: red;
+      font-size: 30px;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+ <button  id="btn"></button>
+  <script type="text/javascript">
+    var d = document.createElement('div');
+
+    var id = setInterval(function () {
+     var date = new Date();
+     var s1 = date.getTime();
+     var newdate = new Date('2017-06-20 00:00:00:00');
+     var s2 = newdate.getTime();
+     var mills = (s2 - s1)/1000;
+     if(mills == 0){
+       clearInterval(id);
+       return;
+     }
+     var  seconds =  parseInt(mills % 60);
+     var  minute = parseInt(mills / 60) % 60;
+     var  hour = parseInt(mills / 3600) % 24;
+     var  day = parseInt(mills / 3600 / 24);
+
+     d.innerHTML = '距离京东6.18还剩'+day+'天'+hour+'时'+minute+'分'+seconds+'秒';
+     document.body.appendChild(d);
+     d.setAttribute("class","time");
+   },1000);
+  
+
+
+  </script>
+</body>
+</html>

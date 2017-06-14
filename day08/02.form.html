@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form id="usermessage" action="" method="get">
+    <fieldset>
+      <legend>个人信息</legend>
+      用户名:<input type="text" name="username" ><br>
+      密码:<input type="password" name="password"><br>
+      性别:<input type="radio" name="gender" value="0">男
+      <input checked type="radio" name="gender" value="1">女<br>
+      爱好:<input type="checkbox" name="hobby" value="read">读书
+      <input checked type="checkbox" name="hobby" value="listen">听歌
+      <input type="checkbox" name="hobby" value="drawing">画画
+      <input type="checkbox" name="hobby" value="trip">旅游<br>
+      住址:
+      <select class="" name="address">
+        <option value="0">青岛</option>
+        <option value="1">天津</option>
+        <option value="2">深圳</option>
+        <option value="3">上海</option>
+        <option selected value="4">北京</option>
+      </select>
+      <br>
+      <p>个人简介：</p>
+      <textarea name="text" rows="8" cols="80"></textarea>
+    </fieldset>
+
+  <br>
+  <fieldset>
+    <legend>其他信息</legend>
+    上传文件:
+    <input type="file" name="file" value="">
+  </fieldset>
+
+  <br><br>
+  <button disabled type="button" name="button" value="提交">提交信息</button>
+  <input type="reset" name="reset" value="重置">
+</form>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+  
+</script>
+</body>
+</html>

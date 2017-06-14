@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+  <input id="text" type="text" name="">
+  <button id="btn1" type="button" name="button">Number()</button>
+  <button id="btn2" type="button" name="button">parseInt()</button>
+  <button id="btn3" type="button" name="button">parseFloat()</button>
+  <h3 id="show"></h3>
+  <script type="text/javascript">
+    $("#btn1").click(function(){
+      var str = $("#text").val();
+      $("#show").text(Number(str));
+    })
+    $("#btn2").click(function(){
+      var str = $("#text").val();
+      $("#show").text(parseInt(str));
+    })
+    $("#btn3").click(function(){
+      var str = $("#text").val();
+      $("#show").text(parseFloat(str));
+    })
+  </script>
+</body>
+</html>

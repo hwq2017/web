@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>高阶函数应用</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  /*
+   使用高阶函数实现两数和的平方
+  */
+    function sum(a1,a2) {
+      return a1 + a2;
+    }
+    function power(x) {
+      return Math.pow(x,2);
+    }
+
+    function high(f1,f2) {
+      return function (a1,a2) {
+        return f2(f1(a1,a2))
+      }
+    }
+    var ret = high(sum,power);
+    console.log(ret(1,2));
+
+
+    /*
+     求平方的和
+    */
+    function power(x) {
+      return Math.pow(x,2);
+    }
+
+    function add(str) {
+       var s = 0;
+
+      for (var i = 0; i < str.length; i++) {
+       s += str[i]
+      }
+      // console.log(arguments);
+      return s;
+    }
+    console.log(add(power(3),power(2)));
+    function high1(f1,f2) {
+      return function () {
+        var res = [];
+        for (var i = 0; i < arguments.length; i++) {
+          res[i] = f2(arguments[i]);
+        }
+        //console.log(res);
+        return f1(res);
+      }
+    }
+    var ret = high1(add,power);
+    console.log(ret(1,2,3));
+
+  </script>
+</body>
+</html>

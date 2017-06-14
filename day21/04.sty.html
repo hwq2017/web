@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>属性操作</title>
+  <style media="screen">
+    .list-1 li{
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="p1">hello world!</p>
+
+  <ul id="lis">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <ul class="list-1">
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+
+  <script type="text/javascript">
+    var p = document.getElementById('p1');
+
+    // p.setAttribute("style","color:red;");
+    // p.setAttribute("style","background-color:pink;");//覆盖前面的样式设置
+
+
+    //cssText,是style属性的总体设置，后续所有针对cssText的设置都会覆盖之前的设置
+    p.style.cssText = 'width:150px;height:20px;border:1px solid blue;'
+    p.style.color = 'red';
+    p.style.backgroundColor = 'pink';
+
+    var lis = document.getElementById('lis');
+    var li = lis.children;
+    var list = document.getElementById('list-1');
+    console.log(lis);
+    // li[0].style.cssFloat = 'left';
+    // li[1].style.cssFloat = 'left';
+    // li[2].style.cssFloat = 'left';
+
+
+    lis.setAttribute('class','list-1');
+  </script>
+</body>
+
+</html>

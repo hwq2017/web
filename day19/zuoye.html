@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+ /*4. 实现一个函数：将数组转换成字符串之后，判断该字符串是否是回文？ 回文："123abccba321"就是回文*/
+   function plalindrom(arr) {
+     var ret = arr.join("");
+     var resoult = arr.reverse().join("");
+
+     if (ret === resoult) {
+       return 0;
+     }else {
+       return -1;
+     }
+   }
+   console.log(plalindrom([1,2,3,'a','b','c','c','b','a',3,2,1]));
+
+
+ /*5. 实现函数：将10进制转换为二进制，并输出转换的结果*/
+   function toTwo(num) {
+     if(num > 0){
+      var num1 = [0];
+      var num2 = [1];
+      var ret = [];
+      while (num != 0) {
+        if(num % 2 == 0){
+          ret = ret.concat(num1);
+        }else if (num % 2 == 1) {
+          ret = ret.concat(num2);
+        }
+        num = parseInt(num / 2);
+      }
+    var res = ret.reverse().join("");
+    console.log(res);
+    }else {
+      return 0;
+    }
+   }
+
+   console.log(toTwo(8));
+
+
+ /* 6. 实现函数：判断一个字符串中的括号是否匹配？
+  比如： var str = "(((hello)) hehe";
+  str = "{{{heheh}} hehe"; str = "[[[heheh]] hehe";
+  */
+  function stringK(arr){
+    var count1,count2,count3 = 0;
+    var sum1,sum2,sum3 = 0;
+    for(var i = 0, len = arr.length; i < len; i++){
+      if (arr[i] == '(' ) {
+        count1++;
+      }else if (arr[i] == ')') {
+        sum1++;
+      }
+      if (arr[i] == '[' ) {
+        count2++;
+      }else if (arr[i] == ']') {
+        sum2++;
+      }
+      if (arr[i] == '{' ) {
+        count3++;
+      }else if (arr[i] == '}') {
+        sum3++;
+      }
+    }
+    var count = count1 + count2 + count3;
+    var sum = sum1 + sum2 + sum3;
+    if(count == sum){
+      return 0;
+    }else {
+      return -1;
+    }
+  }
+
+ console.log(stringK(['(','[','h','e',')',')']));
+
+
+
+// DOM 和 jQuery对象的互转?
+  /* jquery 转 DOM 方法1：[index]方法
+                   方法2：.get(index)
+  */
+  var $v = $("#v");//jq对象
+  var v = $v[0];//DOM对象
+  //var v = $v.get(0)
+
+
+ // DOM 转 jQuery
+ var v = document.getElementById('v');
+ var $v = $(v);
+
+  </script>
+</body>
+</html>

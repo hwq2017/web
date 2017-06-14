@@ -1,0 +1,10 @@
+var tom = {
+  "name":"tom",
+  "age":22,
+  "gender":"man",
+  "score":[67,56,78],
+  "contact":{
+    "f":123,
+    "m":4444456
+  }
+}

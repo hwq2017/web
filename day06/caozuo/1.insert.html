@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+  .t {
+    width: 500px;
+    height: 300px;
+    border: 1px solid gray;
+    text-align: center;
+
+    /* 去掉表格单元格之间的间隙*/
+    border-collapse: collapse;
+    margin: 0px auto;
+  }
+  .t td,
+  .t th{
+    border: 1px solid gray;
+
+  }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+  </ul>
+  <h1>1234</h1>
+  <h2>4567</h2>
+
+  <table class="t">
+    <caption><h3>学生信息表</h3></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>20</td>
+      <td>男</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>20</td>
+      <td>男</td>
+    </tr>
+  </table>
+
+  <script src="../js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+      /******** 后插 *************/
+
+    $(".list li").eq(1).append("<li>123</li>"); // .append()在每个匹配元素里面的末尾处插入数据
+    $(".list li").append("<p>hhhhhh</p>");
+    //  $(".list li").append($("<p>jjjjj</p>"))
+    $("<p>jjjjj</p>").appendTo(".list");
+    $(".list").append($("h1")); //也可以在页面上选择一个元素 插入其后,这是移动！！！！
+
+    /************** 前插************/
+
+    $(".list").prepend("<p>hello</p>");
+    $("h2").prependTo($(".list"));
+    console.log($(".list").html());
+
+
+
+    /************* 往表格中插入多行数据 *******************/
+    // 模拟数据
+     var stu = [["王无","22","男"],["里斯","32","女"],["dhfk","22","女"]];
+     for(var i = 0; i < stu.length; i++)
+     {
+        $(".t").append("<tr><td>" + stu[i][0] + "</td><td>" + stu[i][1] + "</td><td>" + stu[i][2] + "</td></tr>");
+      }
+  </script>
+</body>
+</html>

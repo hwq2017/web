@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="d">
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+      <li>3333</li>
+    </ul>
+  </div>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    /************ 外部后插入 *************************/
+      $(".d").after("<p>4444</p>");// 插入所选元素之后
+      $(".d ul").after("<p>44445555</p>");
+      $(".d ul li").after("<p>444455556666</p>");
+
+    /**************** 外部前插  *****************************/
+    $(".d").before("<p>哈哈哈哈</p>");// 插入所选元素之后
+    $(".d ul").before("<p>官方该活动</p>");
+    $(".d ul li").before("<p>44445法规和</p>");
+
+    </script>
+</body>
+</html>

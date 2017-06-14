@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>原生事件</title>
+</head>
+
+<body>
+  <!--html 事件处理方式  -->
+  <button onclick="alert('click btn....');">btn</button>
+
+  <button id="btn1">btn1</button>
+  <button id="btn2">btn2</button>
+
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    // btn1是DOM对象
+    var btn1 = document.getElementById("btn1");
+
+    /* btnjq 是jQuery对象
+      var btnjq = $("#btnjq");
+     console.log(btn1);
+      console.log(btnjq);*/
+
+    /* DOM0级事件处理程序 */
+    btn1.onclick = function() {
+      console.log("click btn1....");
+      btn1.onclick = null; //解除事件绑定
+    };
+
+    /* DOM0级对同一个事件只能注册一次，且最后一次注册有效 */
+    // btn1.onclick = function(){
+    // console.log("click btn2...");
+    // };
+
+
+    /* DOM2级事件处理程序   false为事件冒泡   true为事件捕获方式*/
+    var btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click",function(){
+      console.log("click btn2.....!");
+    },true);
+    /* 两次事件注册都执行*/
+    // btn2.addEventListener("click",function(){
+    //   console.log("btn2 click.....!");
+    // },true);
+
+    function fun() {
+      console.log("btn2 click.....!");
+    };
+    btn2.addEventListener("click",fun,true);
+    btn2.removeEventListener("click",fun,true);//解除绑定
+  </script>
+</body>
+
+</html>

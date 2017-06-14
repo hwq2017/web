@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+
+    fun();
+    //函数声明提升
+    function fun() {
+      console.log("fun...");
+    }
+
+
+    //使用变量的方式定义函数
+    var fun1 = function() {
+      console.log("fun1...");
+    }
+    fun1(); //函数的调用必须在函数定义之后
+
+
+    fun2(1, 2, 3, 4);
+
+    function fun2(arg1, arg2) {
+      console.log(fun2.length); //形参个数
+      console.log(arguments.length);//实参
+      console.log(arguments);
+      for (var i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+
+    }
+
+
+
+    var value = 12;
+
+    function fun3() {
+      console.log(value);
+      var value = 23;
+    }
+    fun3();//undefine
+
+
+    function fun4(arg1, arg2) {
+      var sum = arg1 + arg2;
+      return sum;
+      console.log(sum); //return后的代码不再执行
+    }
+    var s = fun4(2, 3);
+    console.log(s);
+    fun4(1, 2);
+  </script>
+</body>
+
+</html>

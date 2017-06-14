@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设置时间</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var start = new Date();
+    console.log(start);
+    console.log(start.getTime());//返回累计毫秒数(从1970/1/1)
+
+    var end = new Date('2020-1-1 11:00:00:00');//
+    console.log(end);
+
+    //setXXXX  设置时间
+    end.setFullYear(2016);
+    end.setMonth(5);//0~11
+    console.log(end);
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="d">
+    <p id="p1">this is p1!</p>
+    <p id="p2">this is p2!</p>
+  </div>
+  <script type="text/javascript">
+    var tag = document.createElement('p');
+    var node = document.createTextNode("this is p3!");
+    tag.appendChild(node);
+
+    var d = document.getElementById('d');
+    d.appendChild(tag);
+
+
+    var h = document.createElement("h1");
+    var node1 = document. createTextNode("看到三个降落伞");
+    h.appendChild(node1);
+    console.log(h);
+    d.insertBefore(h,tag);
+
+    // 删除元素
+    var p1 = document.getElementById('p1');
+    d.removeChild(p1);
+    //在不引用父元素的情况下删除元素
+    var p2 = document.getElementById('p2');
+    p2.parentNode.removeChild(p2);
+  </script>
+</body>
+</html>

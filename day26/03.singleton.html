@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>惰性创建单例对象</title>
+</head>
+<body>
+   <script type="text/javascript">
+   var singleton = (function () {
+     var ret = null;
+     function Singleton() {
+       var privateA = 10;
+       function getPrivateA() {
+         return privateA;
+       }
+       function setPrivateA(value) {
+         privateA = value;
+       }
+       return {
+         getA:function () {
+           return getPrivateA();
+         },
+         setA:function (value){
+           setPrivateA(value);
+         }
+       }
+     }
+     return {
+       getInstance:function () {
+         // 
+         if(!ret){
+           ret = Singleton();
+         }
+         return ret;
+       }
+     }
+  })()
+  var one = singleton.getInstance();
+  var two = singleton.getInstance();
+  console.log(one === two);
+   </script>
+</body>
+</html>

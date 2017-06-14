@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>包含私有成员的单例对象</title>
+
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+      外界访问不到，但通过公共接口或方法能够访问，还不能修改
+    */
+    // 单例对象===>函数返回值必须是个对象
+    function s() {
+     var privateA = 10;
+     function getPrivateA() {
+       return privateA;
+     }
+     function setPrivateA(value) {
+       privateA = value;
+     }
+     return {
+       getA:function () {
+         return getPrivateA();
+       },
+       setA:function (value){
+         setPrivateA(value);
+       }
+     }
+   }
+
+  //  obj = {
+  //    getA:function () {
+  //
+  //    }
+  //  }
+  var obj = s();
+  obj.getA();
+
+
+
+
+  var singleton = (function () {
+   var privateA = 10;
+   function getPrivateA() {
+     return privateA;
+   }
+   function setPrivateA(value) {
+     privateA = value;
+   }
+   return {
+     getA:function () {
+       return getPrivateA();
+     },
+     setA:function (value){
+       setPrivateA(value);
+     }
+   }
+ })()
+ console.log(singleton.getA());
+  </script>
+</body>
+</html>

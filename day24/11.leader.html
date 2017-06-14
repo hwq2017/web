@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leader</title>
+  <style media="screen">
+    .text{
+      max-width: 600px;
+      height: 200px;
+      border: 1px solid lightgray;
+      margin: 100px auto;
+    }
+    span{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="con" class="text" contenteditable="true"></div>
+  <button class="btn">检测</button>
+  <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  
+   var sen = ['习近平','周永康','薄熙来'];
+
+   $('.btn').click(function () {
+     var con = $('#con').html();
+     con = convert(con,sen);
+     $('#con').html(con);
+   })
+
+   /*
+    @str：要检索的字符串
+    @keywords：要匹配的关键字
+   */
+   function convert(str,keywords) {
+     var ret = new RegExp('(' + keywords.join('|') + ')','g');
+     str = str.replace(ret,function (m,p1) {
+       return '<span>' + m + '</span>';
+     });
+     return str;
+   }
+  /*
+    var s = new RegExp('(a|b)','g');
+    var str = '123acb';
+    str = str.replace(s,'t');
+    console.log(str);
+  */
+  </script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      height: 0;
+    }
+    body {
+      width: 100%;
+      background: #f1f2f6;
+    }
+    ul {
+      list-style: none;
+    }
+    /*li {
+      float: left;
+    }*/
+    a {
+      text-decoration: none;
+    }
+    .head {
+      height: 30px;
+      min-width: 1240px;
+      background: #757575;
+    }
+    .top{
+      height: 30px;
+      width: 1240px;
+      margin: 0 auto;
+    }
+    .top  a, .tops {
+      height: 30px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 30px;
+    }
+    .tops {
+      margin: 0 5px;
+    }
+    .hd-bottom {
+      height: 84px;
+      min-width: 1240px;
+      background: #fff;
+    }
+    .hd-bottom-inner {
+      width: 1240px;
+      height: 84px;
+      margin: 0 auto;
+      padding-top: 0px;
+      background: url("./images/360.png") no-repeat;
+      position: relative;
+    }
+    .hd-bottom-inner .ul{
+      width: 398px;
+      height: 25.6px;
+      margin-top: 26px;
+      position:absolute ;
+      top: -10px;
+      left: 385px;
+    }
+    .hd-bottom-inner .ul span {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .hd-bottom-inner .a2{
+      color: #444;
+    }
+    .hd-bottom-inner .a1, .a2:hover{
+      color: #00ae9d;
+    }
+    .box {
+      float: right;
+      width: 386px;
+      height: 84px;
+      margin-left: 40px;
+
+    }
+    .box input {
+      height: 30px;
+      width: 245px;
+      position: relative;
+      top: 13px;
+      left: -24px;
+      color: #ccc;
+      padding-left: 5px;
+      border: 1px solid #ccc;
+      background: url("./images/360Q5.png") no-repeat right;
+    }
+    .input {
+      width: 269px;
+      height: 32px;
+
+    }
+    .input img {
+      width: 32px;
+      height: 32px;
+      float: right;
+      position: relative;
+      top: -20px;
+      left: -9px;
+    }
+    .bt {
+      width: 77px;
+      height: 25.6px;
+      position: relative;
+      top: -15px;
+      left: 297px;
+    }
+
+ .tupian{
+  width: 1240px;
+  height: 400px;
+  margin: 20px auto;
+  background: url("./images/img.png") no-repeat;
+}
+.content{
+  width:1240px;
+  height: 3097px;
+  margin: 0 auto;
+}
+.content .left{
+  width: 925px;
+  height: 3097px;
+  background: #fff;
+  margin-bottom: 25px;
+float: left;
+
+}
+.content .left .left-ul{
+  height: 3010px;
+}
+.content .left ul li{
+  width: 835px;
+  height: 300px;
+  border-bottom: 1px solid #ececec;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.content .left ul li img{
+  width: 279px;
+  height: 210px;
+  margin-top: 45px;
+  margin-right: 20px;
+  float: left;
+}
+.new-detail {
+  width: 525px;
+  float: left;
+  color: #5c5c5c;
+margin-top: 50px;
+}
+.new-title a,.new-data a{
+    color: #5c5c5c;
+}
+.new-detail .new-title {
+  height: 48.6px;
+  font-size: 21px;
+
+}
+.new-detail .new-title .new-title-a{
+  color: red;
+}
+.new-detail .new-content{
+  height: 80px;
+  padding-bottom: 10px;
+  font-size: 15px;
+
+}
+.new-data{
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+ .content .new-detail .new-data  .dataimg{
+  font-size: 12px;
+  width: 31px;
+  height: 31px;
+  float: right;
+  margin: -23px 0;
+}
+.new-data>span{
+  margin-right: 3px;
+}
+
+.index {
+  width: 925px;
+  height: 87px;
+}
+.index-pages{
+  width: 925px;
+  height: 32px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.index-pages>a{
+  display: inline-block;
+  line-height: 32px;
+  margin-left: -1px;
+  padding: 0 6px;
+  font-size: 14px;
+  color:#5f5f5f;
+}
+.content .right {
+
+  width: 300px;
+  height: 2128px;
+
+  float: right;
+  background: #fff;
+}
+.right .posting{
+  width: 300px;
+  height: 84px;
+
+}
+.posting>a{
+  display: inline-block;
+  height: 80px;
+  width: 90%;
+  line-height: 80px;
+  letter-spacing: 2px;
+  background: #2ec7bb;
+  color: #fff;
+  text-align: center;
+  font-size:34px;
+  margin: 0 auto;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.time{
+  margin-top: 20px;
+  width: 300px;
+  height: 103px;
+}
+.time .right-time{
+  width: 135px;
+  height: 104px;
+  background: #2ec7bb;
+  color: #fff;
+  text-align: center;
+  float: left;
+  margin-left: 15px;
+}
+.time .left-time{
+  height: 104px;
+  width: 126px;
+  float: right;
+  margin-right: 15px;
+  margin-top:2px;
+
+}
+.right-time>p{
+  width: 135px;
+  height: 30px;
+}
+.left-time>.left-time-a{
+  margin-top: -1px;
+}
+ .left-time>a{
+  width: 120px;
+  height: 42px;
+  display: block;
+  border: 2px solid #2ec7bb;
+  margin-top: 8px;
+  text-align: center;
+  color: #2ec7bb;
+  line-height: 42px;
+  font-size: 18px;
+  /*margin-right: 20px;*/
+}
+  </style>
+</head>
+<body>
+ <div class="head">
+   <div class="top">
+    <span><a href="#">360官网</a></span><span class="tops">|</span>
+    <span><a href="#">360商城</a></span><span class="tops">|</span>
+    <span><a href="#">360手机网</a></span><span class="tops">|</span>
+    <span><a href="#">社区客户端</a></span>
+   </div>
+ </div>
+ <div class="hd-bottom">
+   <div class="hd-bottom-inner">
+     <div class="ul">
+       <span><a class="a1" href="#">推荐</a></span>
+       <span><a class="a2" href="#">论坛</a></span>
+       <span><a class="a2" href="#">版块</a></span>
+       <span><a class="a2" href="#">同城</a></span>
+       <span><a class="a2" href="#">好奇者试用</a></span>
+       <span><a class="a2" href="#">精彩活动</a></span>
+       <span><a class="a2" href="#">专题</a></span>
+     </div>
+     <div class="box">
+       <div class="input"><input type="text" placeholder="帖子/用户"><img src="./images/big.png" alt=""></div>
+      <div class="bt">
+        <a class="a2" href="#">登录</a>&nbsp;
+        <a class="a1" href="#">注册</a>
+      </div>
+     </div>
+   </div>
+ </div>
+
+   <div class="tupian">
+
+   </div>
+<div class="content">
+   <div class="left">
+     <div class="left-ul">
+     <ul>
+       <li>
+         <img src="./images/li1.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">老周做客《焦点访谈》：网络安全攻防战该怎么打？</a></h2>
+           <p class="new-content">
+             近期央视《焦点访谈》栏目再度聚焦为网络信息安全，并对国家层面的网络安全进
+             行了解读，360公司董事长周鸿祎也应邀在节目中发表了自己的看法。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-20</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li2.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">从中专肄业生到怪才黑客，这个95后中国小伙......</a></h2>
+           <p class="new-content">
+             4月16日，Hack in the Box安全会议,在荷兰阿姆斯特丹落下了帷幕，来自中国
+             360互联网安全创新中心的“黑客”军团,共带来了5项前沿议题的演讲，其中来自360
+             独角兽团队的不满20岁小黑客曾颖涛，赢得专家们赞赏，这也是这个欧洲顶级安全会
+             议,迎来的最年轻演讲者。
+           <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-18</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li3.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">《速度与激动8》里吊炸天的黑科技真实现了！</a></h2>
+           <p class="new-content">
+             只要一提起《速度与激情》，就会想起让人直呼“好爽”的飙车，紧凑刺激的剧
+             情，夺人眼球的豪车美女。当然还有那些记忆深刻的——神出鬼没、突破想象的：黑科技
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">360动态</a></span>
+             <span>2017-04-17</span>
+             <span>|</span>
+             <span>飞机飞行</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li4.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="new-title-a" href="#">唐僧和女儿国国王闷闷不乐，竟是因为 ... ...</a></h2>
+           <p class="new-content">
+             #唐僧被抓记# 唐长老怎么经常愁眉苦脸？女儿国国王又为何总闷闷不乐 能让
+             他们畅快淋漓的还得靠……戳进了你就知道~~360产品四格漫画10th 一起来看！（本期依旧有奖）
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-17</span>
+             <span>|</span>
+             <span>王光明</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li5.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">【有妹子】山东职业学院带你领跑校园新生活</a></h2>
+           <p class="new-content">
+             360校园俱乐部走进山东职业学院，现场超级火爆，超多萌妹子！各种游戏环节乐翻天！赶快来一起看看吧！
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">360校园</a></span>
+             <span>2017-04-14</span>
+             <span>|</span>
+             <span>田睁开</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li6.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">只有高大上的食堂算神马？配备这些的公司才是好公司！</a></h2>
+           <p class="new-content">
+             又到了一年招聘热季。 按照惯例，我们总是要展示一下公司的软硬实力， 福利以及伙伴们的战斗力。 之前发过了食堂篇，早饭中饭晚饭下午茶以及各种好吃的。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-20</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li7.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">最美四月，美女带你领跑校园新生活【360济南校园俱...</a></h2>
+           <p class="new-content">
+             你是人间四月天，360带你领跑校园新生活， 下午6点整，学院的社团指导老师
+             宣布活动开始并欢迎济南大学360校园俱乐部作为新社团加入了社团大家庭。不
+             出意外的，因为我们的活动因为奖品丰厚，工作人员漂亮帅气。成功的吸引到了
+             众多的围观，很多同学参与进来。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li8.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">白百何出轨、冒充达康书记…… 这届骗子还真是拼了！</a></h2>
+           <p class="new-content">
+             不管你有没有一颗八卦的心，今天，不知道某白姓女星出轨的爆料，一定是
+             你没手机没电脑还没朋友。 据说画面满满的都是尴尬，小鲜肉在泳池边“异
+             军突起”，白姓女星“指点江山”。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+              <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-20</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li9.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">老周做客《焦点访谈》：网络安全攻防战该怎么打？</a></h2>
+           <p class="new-content">
+             近期央视《焦点访谈》栏目再度聚焦为网络信息安全，并对国家层面的网络安全进
+             行了解读，360公司董事长周鸿祎也应邀在节目中发表了自己的看法。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+              <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-20</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+       <li>
+         <img src="./images/li10.png" alt="">
+         <div class="new-detail">
+           <h2 class="new-title"><a class="a2" href="#">老周做客《焦点访谈》：网络安全攻防战该怎么打？</a></h2>
+           <p class="new-content">
+             近期央视《焦点访谈》栏目再度聚焦为网络信息安全，并对国家层面的网络安全进
+             行了解读，360公司董事长周鸿祎也应邀在节目中发表了自己的看法。
+            <a style="color:#00ae9d;" href="#">全文》</a>
+           </p>
+           <div class="new-data">
+             <span><a class="a2" href="#">粉丝杂谈</a></span>
+             <span>2017-04-20</span>
+             <span>|</span>
+             <span>鴻鴈</span>
+             <p><a href="#"><img class="dataimg" src="./images/share1.png" alt=""></a></p>
+           </div>
+         </div>
+       </li>
+     </ul>
+     </div>
+     <div class="index">
+     <div class="index-pages">
+       <a href="#" class="a2">1</a>
+       <a href="#" class="a2">2</a>
+       <a href="#" class="a2">3</a>
+       <a href="#" class="a2">4</a>
+       <a href="#" class="a2">5</a>
+       <a href="#" class="a2">6</a>
+       <a href="#" class="a2">7</a>
+       <a href="#" class="a2">8</a>
+       <a href="#" class="a2">9</a>
+       <a href="#" class="a2">10</a>
+       <a href="#" class="a2">11</a>
+       <a href="#" class="a2">12</a>
+       <a href="#" class="a2">13</a>
+       <a href="#" class="a2">14</a>
+       <a href="#" class="a2">15</a>
+       <a href="#" class="a2">16</a>
+       <a href="#" class="a2">17</a>
+       <a href="#" class="a2">18</a>
+       <a href="#" class="a2">19</a>
+       <a href="#" class="a2">20</a>
+     </div>
+     </div>
+   </div>
+   <div class="right">
+     <div class="posting"><a href="#">发帖</a></div>
+     <div class="time">
+       <div class="right-time">
+         <p>星期六</p>
+         <p>4.22</p>
+         <p>已签到6201人</p>
+       </div>
+       <div class="left-time">
+       <a class="left-time-a" href="#">签到</a>
+       <a href="#">抽奖</a>
+       </div>
+     </div>
+   </div>
+</div>
+
+
+</body>
+</html>

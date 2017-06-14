@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义bind绑定</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function bind(fn,context) {
+      var prot = Array.prototype.slice.call(arguments,2);
+
+      return function(){
+        var prot1 = Array.prototype.slice.call(arguments,0);
+        var arg = prot.concat(prot1);
+        return fn.apply(context,arg);
+      }
+    }
+
+    function handler() {
+      console.log(this);
+      console.log(arguments);
+    }
+    function handler1() {
+      console.log(this);
+    }
+
+
+    var obj = {
+      value:12
+    }
+    var newHandler = bind(handler,obj,1,2);
+    // console.log(newHandler);
+    newHandler();
+
+  </script>
+</body>
+</html>

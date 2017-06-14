@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节点的访问</title>
+</head>
+<body>
+  <div id="d">
+    <div id="indiv"></div>
+    hello
+    <p class="p1">p1111</p>
+  </div>
+  <h1 id="h">h111111111</h1>
+
+  <script type="text/javascript">
+    var par = document.getElementById('d');
+    var indiv = document.getElementById('indiv');
+
+    //访问父节点
+    console.log(indiv.parentNode);
+    console.log(document.parentNode);//null
+
+    //访问兄弟节点
+    console.log(indiv.nextSibling);//hello   下一个兄弟
+    console.log(indiv.nextSibling.nodeType);//3 包含文本节点
+    console.log(indiv.nextElementSibling);//输出标签
+
+    var p = document.getElementsByClassName('p1');
+    console.log(p[0].previousElementSibling);//前一个
+    console.log(p[0].previousSibling);
+
+    //访问子节点
+    console.log(par.firstChild);//包含文本节点
+    console.log(par.firstElementChild);
+    console.log(par.lastChild);
+    console.log(par.lastElementChild);
+
+    console.log(par.children);//返回数组，所有子节点
+    console.log(par.children[0]);
+
+  </script>
+</body>
+</html>

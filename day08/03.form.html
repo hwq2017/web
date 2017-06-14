@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<form action="#" id="usermesg" method="get">
+  用户名:<input type="text" name="username" ><br>
+  密码:<input type="password" name="password"><br>
+  性别:<input type="radio" name="gender" value="0">男
+  <input checked type="radio" name="gender" value="1">女<br>
+  爱好:<input type="checkbox" name="hobby" value="read">读书
+  <input checked type="checkbox" name="hobby" value="listen">听歌
+  <input type="checkbox" name="hobby" value="drawing">画画
+  <input type="checkbox" name="hobby" value="trip">旅游<br>
+  <button type="submit" name="button">提交</button>
+  <input type="reset" name="reset" value="重置">
+</form>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+
+//点击了提交相关按钮后，都会触发表单的submit事件
+  $("#usermesg").submit(function(){
+    alert("error...");
+
+
+
+
+
+    //当判断表单数据有问题时，会阻止提交，默认情况下是自动提交
+    return false;
+
+    //默认情况下，执行完相关操作后，会直接提交
+  });
+</script>
+</body>
+</html>

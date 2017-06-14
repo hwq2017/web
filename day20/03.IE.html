@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IE低版本(ie8以下)事件处理程序</title>
+</head>
+
+<body>
+  <button id="btn">点击</button>
+
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+
+    function fun() {
+      console.log("onclick btn1....");
+    }
+
+    function fun1() {
+      console.log("onclick btn2....");
+    }
+    btn.attachEvent("onclick", fun);
+    btn.attachEvent("onclick", fun1);
+    btn.detachEvent("onclick", fun1); //删除事件
+
+    //冒泡传递
+    document.attachEvent("onclick", function() {
+      console.log("onclick document.....");
+    });
+  </script>
+</body>
+
+</html>

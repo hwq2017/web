@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Math</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var num = [1, 2, 4, 2, 8, 6];
+    console.log(Math.min(num)); // NaN  数组不可传递
+    console.log(Math.min(...num)); // 1  ES6新特性
+
+    //使用apply(arg1,Array)方法，让Math.min Math.max可以传递数组
+    console.log(Math.min.apply(null, num));
+
+
+    // 取整
+    console.log(Math.round(3.2));// 3
+    console.log(Math.round(3.5));// 4
+
+    console.log(Math.floor(3.2));// 3
+    console.log(Math.floor(-3.2));// -4
+    console.log(Math.floor(3.5));// -3
+
+    console.log(Math.ceil(3.2));// 4
+    console.log(Math.ceil(3.6));// 4
+    console.log(Math.ceil(-3.2));// -3
+
+
+    for (var i = 0; i < 10; i++) {
+      console.log(Math.random());//0<=num<1   真随机数
+   }
+
+    //65--96
+    for (var i = 0; i < 6; i++) {
+      console.log(Math.floor(Math.random()*32+65));//Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)
+    }
+
+
+
+    
+    // console.log(str);
+  </script>
+</body>
+
+</html>

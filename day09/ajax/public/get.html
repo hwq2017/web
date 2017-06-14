@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    button {
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+   <button type="button" name="button" onclick="clickon()">get </button>
+
+
+  <script type="text/javascript">
+
+function clickon(){
+  function createXHR() {
+    if (typeof XMLHttpRequest != "undefined") {
+        return new XMLHttpRequest;
+    }else if (typeof ActiveXObject != "undefined") {
+        if (typeof arguments.callee.activeXString != "string") {
+            var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                    "MSXML2.XMLHttp"
+                ],
+                i, len;
+            for (i = 0, len = versions.length; i < len; i++) {
+                try {
+                    new ActiveXObject(versions[i]);
+                    arguments.callee.activeXString = versions[i];
+                    break;
+                } catch (ex) {
+                    //跳过
+                }
+            }
+        }
+        return new ActiveXObject(arguments.callee.activeXString);
+    } else {
+        throw new Error("No XHR object available.");
+    }
+}
+
+  var xhr = createXHR();
+
+  function addURLParam(url, name, value){
+    url += url.indexOf("?")==-1? "?":"&";
+    url += encodeURIComponent(name)+"="+encodeURIComponent(value);
+    return url;
+  }
+  var url = addURLParam("http://127.0.0.1:8000/index","name","zhangsan");
+  url = addURLParam(url,"age","23");
+
+  xhr.open("get",url,true);
+  xhr.send(null);
+
+  xhr.onreadystatechange=function(){
+    if (xhr.readyState == 4) {
+      console.log(xhr.response);
+    }else {
+      console.log("error");
+    }
+  }
+}
+  </script>
+</body>
+</html>

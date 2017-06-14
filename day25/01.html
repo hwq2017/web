@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+
+
+   var value = 0;
+
+   var obj = {
+     value:12,
+     test:function () {
+       console.log(this.value);
+     }
+
+   }
+
+
+   obj.test();
+
+
+   var fun = obj.test;
+   console.log(typeof fun);
+   fun();//将obj对象的方法赋值给了fun,全局调用fun,this相当于window
+
+
+
+
+
+
+  </script>
+</body>
+</html>

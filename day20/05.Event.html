@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event对象的属性</title>
+  <style media="screen">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: 2000px;
+  }
+
+  #f {
+    width: 500px;
+    height: 300px;
+    background: yellow;
+  }
+
+  #s {
+    width: 300px;
+    height: 200px;
+    background: blue;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+    <div id="s"></div>
+  </div>
+
+  <script type="text/javascript">
+    var f = document.getElementById('f');
+    var s = document.getElementById('s');
+
+    f.onclick = function(event){
+      console.log(event);
+      console.log(this);
+      console.log(event.type);
+      console.log(event.target);
+      console.log(event.currentTarget);
+
+      console.log(event.pageY);
+    }
+    s.onclick = function(event){
+      console.log(event);
+      console.log(this);
+      console.log(event.type);
+      console.log(event.target);
+      console.log(event.currentTarget);
+
+    }
+    // document.onkeydown = function (event){
+    //   console.log(event.key);
+    //   console.log(event.type);
+    // }
+    document.addEventListener("keypress",function (event) {
+      console.log(event.key);
+    },false);
+
+    document.onmousedown = function (event) {
+      console.log(event.button);
+    }
+
+  </script>
+</body>
+</html>

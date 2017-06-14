@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function test() {
+      var a = 1;
+      function fun() {
+         console.log(++a);
+      }
+      return fun;
+    }
+    var ret = test();
+    var ret1 = test();
+    ret();//2
+    ret();//3
+    ret();//4
+
+    //每个闭包之间 都独立访问变量，相互之间没影响
+    ret1();//2
+  </script>
+</body>
+</html>

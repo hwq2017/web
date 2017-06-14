@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时器</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var id;
+    var num = 0;
+    //间隔定时器
+    //一直执行，除非手动关闭定时器
+    // 严格按照指定的延迟时间来开始下一次循环，无论代码是否执行完毕
+    //所以可能同一时刻同一个代码有多次执行
+    //var id = setInterval("console.log('hello world');",1000);
+
+    function count() {
+      num++;
+      if(num==10){
+        console.log('id = ',id);
+        clearInterval(id);//取消定时器
+      }
+      console.log(num);
+    }
+    id = setInterval(count,1000);
+  </script>
+</body>
+</html>

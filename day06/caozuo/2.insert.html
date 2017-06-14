@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="f">
+    <div class="f1">大开发国家</div>
+  </div>
+  <p>发挥到是客观块</p>
+  <h1>标题1</h1>
+  <div class="d">
+    dgpafogi
+    <ul>
+      <li>jgj</li>
+      <li>dd</li>
+      <li>dg</li>
+    </ul>
+  </div>
+
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      //获得元素内容包含标签
+      console.log($(".f").html());//<div class="f1">大开发国家</div>
+
+      //设置元素内容,将之前的内容覆盖掉
+      $("p").html("<span>哈哈哈</span>");
+
+      //获得标签里的内容
+      console.log($("h1").text());
+      // 设置文本,将之前所有内容覆盖
+      $("h1").text("监督机构打开");
+      $(".d").text("反馈给卡卡");
+
+    </script>
+</body>
+</html>

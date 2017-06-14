@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达式常用测试方法</title>
+</head>
+<body>
+  <script type="text/javascript">
+    /*
+     1. test()方法：reg.test(str)
+        匹配成功返回true,失败返回false
+    */
+
+    var str = 'helloworldhellobeijing';
+    var reg = new RegExp(/hello/,'g');
+    console.log(reg.test(str));
+
+    /*
+     2. match()方法：str.match(reg)
+        返回值：数组，
+        如果含有标志位 ‘g’,则返回的数组包括所匹配到的字符串，捕获值不会返回
+        如果没有'g',则返回的数组包括所匹配到的字符串，(捕获值)，index属性(匹配到的字符串在原字符串中的索引),input属性(原字符串)
+        如果没匹配到，返回null
+    */
+    var str = 'helloworldhelloworldgoodmorning';
+    var reg = /world/g;
+    console.log(str.match(reg));// ['world','world']
+    var reg1 = /world/;
+    console.log(str.match(reg1));// ["world", index: 5, input: "helloworldhelloworld"]
+    var reg2 = /hehe/;
+    console.log(str.match(reg2));// null
+
+    var reg3 = /(good)/; // ()叫做捕获,捕获的作用可以直接提取符合条件的某一分部
+    console.log(str.match(reg3));// ["good", "good", index: 20, input: "helloworldhelloworldgoodmorning"]
+
+
+   /*
+    3. search()方法：str.search(reg)
+       返回值：如果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 -1。
+   */
+    var str = '123abchello';
+    var reg = /23a/;
+    console.log(str.search(reg));// 1
+
+    /*
+    4. exec()方法：reg.exec(str)
+       返回值：数组。同match()方法里，没有‘g’的返回值,失败返回null
+
+    */
+    var str = 'The Quick Brown Fox Jumps Over The Lazy DogThe Quick Brown Fox Jumps Over The Lazy Dog';
+    var reg =/quick\s(brown).+?(jumps)/ig;
+    //console.log(reg.exec(str));// index:4
+    //console.log(reg.lastIndex);//25 下一次匹配开始的位置
+    //console.log(reg.exec(str));// index:47
+    //console.log(reg.lastIndex);//68
+    var ret;
+    /*
+     exec方法添加全局'g'的时候，需要循环exec
+    */
+    while (ret = (reg.exec(str)!=null)) {
+      console.log(ret);
+      console.log(reg.lastIndex);
+    }
+    /*
+     标志位 'm'多行
+    */
+    var string = 'The Quick Brown Fox Jumps Over The Lazy Dog\n'+
+                 'The Quick Brown Fox Jumps Over The Lazy Dog\n'+
+                 'The Quick Brown Fox Jumps Over The Lazy Dog\n';
+    var reg =/^The Quick Brown Fox Jumps Over The Lazy Dog$/m;
+    console.log(string.match(reg));
+
+
+    var string1 = 'The Quick Brown Fox Jumps Over The Lazy Dog'+
+                 'The Quick Brown Fox Jumps Over The Lazy Dog'+
+                 'The Quick Brown Fox Jumps Over The Lazy Dog';
+    var reg =/^The Quick Brown Fox Jumps Over The Lazy Dog$/m;
+    console.log(string1.match(reg));// null
+
+    //console.log(string);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    outer: for (var i = 0; i < 10; i++) {
+      console.log("i = ", i);
+      for (var j = 0; j < 5; j++) {
+        console.log(j);
+        if (j == 2) {
+          // break;//只跳出最近的一层循环
+          break outer; //指定跳出的循环层级
+          // continue;
+        }
+      }
+    }
+    console.log("after outer....");
+    for (var i = 0; i < 5; i++) {
+      switch (i) {
+        case 2:
+          console.log("i =", i);
+          break;
+        case 4:
+          console.log("i =", i);
+          break;
+        default:
+          console.log("error");
+          break;
+      }
+    }
+    console.log("after switch..........");
+  </script>
+</body>
+
+</html>

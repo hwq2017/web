@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      height: 200px;
+      margin: 50px auto;
+      position: relative;
+      display: flex;
+    }
+    .box img{
+      height: 200px;
+      width: 400px;
+    }
+   .box .img{
+     width: 400px;
+     height: 200px;
+     margin: 0 auto;
+     overflow: hidden;
+   }
+   .box .img ul{
+      list-style: none;
+      width: 1600px;
+      /*animation: run 5s linear 1s infinite;*/
+    }
+    ul li{
+      float: left;
+    }
+
+ .round{
+   width:200px;
+   height: 30px;
+   position: absolute;
+   top: 169px;
+   left: 533px;
+ }
+ .round div a{
+   width: 6px;
+   height: 6px;
+   margin: 10px;
+   border-radius: 10px;
+   border: 2px solid rgba(255,255,255,0.3);
+   background: rgba(0,0,0,0.4);
+   float: right;
+ }
+ .round a:hover{
+   border: 2px solid rgba(0, 0, 0, 0.4);
+   background:rgba(255,255,255,0.4);
+ }
+
+ @keyframes run {
+    0%{}
+    100%{
+      transform: translateX(-400px);
+    }
+ }
+  </style>
+
+</head>
+<body>
+<div class="box">
+  <div class="img">
+    <ul>
+      <li><img id="img1" src="./images/cake1.jpg" alt=""></li>
+      <li><img id="img2" src="./images/cake2.jpg" alt=""></li>
+      <li><img id="img3" src="./images/cake3.jpg" alt=""></li>
+      <li><img id="img4" src="./images/cake4.jpg" alt=""></li>
+    </ul>
+  </div>
+  <div class="round">
+     <div class="d1"><a href="#img1"></a></div>
+     <div class="d2"><a href="#img2"></a></div>
+     <div class="d3"><a href="#img3"></a></div>
+     <div class="d4"><a href="#img4"></a></div>
+  </div>
+</div>
+
+
+
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <script src="http://unslider.com/unslider.js"></script>
+   <script type="text/javascript">
+      // $(function(){
+      //   for(var i=0;i<4;i++){
+      //     $("a").eq(i).click(i,function(event){
+      //       $(".img").css("background","url(./images/cake"+ data.event+1 +".jpg)");
+      //     })
+      //   }
+      // })
+      $(function(){
+        $(".img").unslider({
+          // speed:500,
+          // delay:3000,
+          // complete:function(){},
+          // keys:true;
+          // dots:true;
+          // autoplay:true;
+          // fluid:false
+        });
+      });
+   </script>
+</body>
+</html>

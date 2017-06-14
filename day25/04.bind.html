@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>带参--内置函数bind绑定</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function handler(arg1,arg2) {
+      console.log(this);
+      console.log(arg1,arg2);
+      console.log(arguments);
+    }
+
+    var obj1 = {
+      name:'lily',
+      age:20
+    }
+    var newHandler = handler.bind(obj1);
+    newHandler();
+  </script>
+</body>
+</html>

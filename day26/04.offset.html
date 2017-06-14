@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>偏移量</title>
+  <style media="screen">
+    .s {
+      width: 300px;
+      height: 200px;
+      padding: 20px;
+      border: 1px solid gray;
+      background: pink;
+      position: relative;
+      left: auto;
+    }
+
+    .in {
+      width: 50px;
+      height: 50px;
+      background: blue;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="s">
+    <div class="in"></div>
+  </div>
+  <script type="text/javascript">
+    var s = document.getElementsByClassName('s')[0];
+    var inner = document.getElementsByClassName('in')[0];
+
+    // height(content) + padding + border
+    console.log('s.offsetHeight = ', s.offsetHeight); //242, 只读，不可修改
+    console.log('s.offsetWidth = ', s.offsetWidth); //342
+    //s.offsetWidth = 100;
+
+    // content + padding
+    console.log('s.clientHeight = ', s.clientHeight);
+    console.log('s.clientWidth = ', s.clientWidth);
+
+    // content
+   //使用 window.getComputedStyle获得 计算之后的元素的样式
+    var style = window.getComputedStyle(s);
+    // console.log(style);// 返回值是一个对象
+    console.log('width = ',style.width);
+    console.log('width = ',style.getPropertyValue('width'));
+
+
+
+    console.log('inner.offsetLeft = ', inner.offsetLeft); //只读
+    console.log('inner.offsetTop = ', inner.offsetTop);
+    console.log('inner.offsetParent = ',inner.offsetParent);// s
+    inner.style.left = '100px'; // 通过这种方式进行修改
+    console.log('inner.offsetLeft = ', inner.offsetLeft); //只读
+  </script>
+</body>
+
+</html>

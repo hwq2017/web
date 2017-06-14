@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>document的滚动事件</title>
+  <style media="screen">
+    body{
+      height: 3000px;
+    }
+    .round{
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      background: rgba(12, 0, 0, 0.5);
+      text-align: center;
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="round">Top</div>
+  <script type="text/javascript">
+    var r = document.getElementsByClassName('round')[0];
+
+    document.onscroll = function () {
+      //if (document.body.scrollTop > 300)
+      if (scroll().top > 300) {
+        
+        r.style.display = 'block';
+        console.log(document.body.scrollTop);
+      }else {
+        r.style.display = 'none';
+      }
+
+      // console.log(window.offsetPageY || document.body.scrollTop || document.documentElement.scrollTop);
+    }
+    r.onclick = function () {
+      // document.scrollTop = 0;
+      //指定让滚动条回到指定的位置
+      window.scrollTo(0,0);
+    }
+
+
+    function scroll() {
+      if(window.offsetPageY){
+        return {
+          left:window.offsetPageX,
+          top:window.offsetPageY
+        }
+      }else if (document.body.scrollTop) {
+        return {
+          left:document.body.scrollLeft,
+          top:document.body.scrollTop
+        }
+      }else if (document.documentElement.scrollTop) {
+        return {
+          left:document.documentElement.scrollLeft,
+          top:document.documentElement.scrollTop
+        }
+      }
+    }
+
+  </script>
+</body>
+</html>

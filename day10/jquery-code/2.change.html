@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>change event</title>
+  <style media="screen">
+    /*body{
+      background: url("./image/1.jpg");
+    }*/
+    img{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form action="#" method="get">
+
+
+  <select class="select1" name="">
+    <option value="1">111</option>
+    <option value="2">222</option>
+    <option value="3">333</option>
+  </select>
+  <button >show</button>
+  <button id="bt1">hide</button>
+  </form>
+  <img src="./image/1.jpg" alt="">
+
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      // $(".select1").change(function(){
+      //   $("body").css("background","url(./image/" + $(this).val() + ".jpg)");
+      // }).click(function(){
+      //   $("body").fadeIn(400);
+      // });
+      // $("button").hover(function(){
+      //    $("img").fadeIn(400);
+      // },function(){
+      //    $("img").fadeOut(400);
+      // })
+      // $("button").hover(function(){
+      //
+      //   $("img").show();
+      // },function(){
+      //   $("img").hide();
+      // })
+    //  $("button").click(function(){
+    //    $("img").show(400);
+    //  });
+    //  $("#bt1").click(function(){
+    //    $("img").hide("slow",function(){});
+    //  });
+
+
+
+     $("button").focus(function(){
+        $("img").show(400);
+     });
+     $("button").blur(function(){
+        $("img").hide(400);
+     });
+
+    });
+  </script>
+</body>
+</html>

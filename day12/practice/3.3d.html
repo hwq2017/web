@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      perspective: 1000px;
+    }
+    .con{
+      width: 150px;
+      height: 50px;
+      margin: 200px auto;
+      position: relative;
+
+      transform-style: preserve-3d;
+      transition: all 1s linear;
+    }
+    .con div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 50px;
+
+    }
+    .nav{
+      transition: all 1s;
+      /*transform-origin: top;*/
+      background: rgba(233,33,33,1);
+      transform: translateZ(25px);
+    }
+    .nav1{
+      background: rgba(233,233,33,1);
+      transform: rotateX(90deg) translateZ(25px);
+    }
+    .con:hover {
+      transform: rotateX(-90deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="con">
+    <div class="nav">12</div>
+    <div class="nav1">123</div>
+  </div>
+</body>
+</html>

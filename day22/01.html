@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>字符串方法</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var str = 'helloworld';
+
+    // 获取相应位置的字符
+    console.log(str.charAt(3)); // l
+    console.log(str[3]); // l
+
+
+    // 获取相应位置的字符的编码
+    console.log(str.charCodeAt(3));
+
+
+    var s = 'helloworld welcome';
+    //返回指定值在字符串首次出现的位置
+    console.log(s.indexOf('world')); // 5
+    console.log(s.indexOf('hello', 5)); // -1, 从5位置开始查找
+    console.log(s.indexOf('Hello')); // -1 区分大小写
+
+
+    //切片
+    var newstr = s.slice(3, 8);
+    console.log(newstr); // lowor
+
+    //返回指定长度的字符串
+    console.log(s.substr(10, 2)); // ' w'
+
+    var sub = 'helloworld';
+    //
+    console.log(sub.substring(5, -5)); // 相当于0-5
+
+    //大小写转换
+    var a = 'abc';
+    var b = 'ABC';
+    console.log(a.toLowerCase());
+    console.log(b.toUpperCase());
+
+
+    var s = "hello world google";
+    var a = s.split();
+    console.log(a);
+
+    a = s.split(" "); //按照空格分割
+    console.log(a);
+
+    a = s.split(" ", 2); //按照空格分割，限制个数２
+    console.log(a);
+  </script>
+</body>
+
+</html>

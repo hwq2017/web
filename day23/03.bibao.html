@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包缺陷的解决</title>
+  <style media="screen">
+    .list{
+      list-style: none;
+      width: 200px;
+      margin: 0 auto;
+    }
+    .list>li{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(1, 0, 0, 0.5);
+      text-align: center;
+      margin-right: 30px;
+      float: left;
+      cursor: pointer;
+    }
+    .show{
+      width: 200px;
+      margin: 0px auto;
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <h2 class="show">点击了 <span id="con"></span></h2>
+
+  <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var list = document.getElementsByClassName('list')[0];
+    var lis = list.children;
+    var con = document.getElementById('con');
+    console.log(typeof lis);// Object
+
+
+    /*for (var i = 0, len = lis.length; i < len; i++) {
+      //立即函数  ：立即执行，而且只执行一次
+      (function(arg){
+      //解决了由于闭包导致的事件处理函数中使用同一个变量的问题
+        lis[i].onclick = function () {
+          con.innerHTML = arg + 1;
+        }
+      })(i);
+    }*/
+
+
+   /*  for (var i = 0, len = lis.length; i < len; i++) {
+         //每一个li都添加了一个index属性，属性值是自己的i;
+         //只要是对象，就可以添加自定义的属性和方法
+        lis[i].index = i + 1;
+        lis[i].onclick = function () {
+          con.innerHTML = this.index ;
+        }
+    }*/
+
+
+    for (var i = 0, len = lis.length; i < len; i++) {
+      $(lis).eq(i).click(i,function (event) {
+        con.innerHTML = event.data + 1;// event.data == i
+      });
+    };
+  </script>
+</body>
+</html>

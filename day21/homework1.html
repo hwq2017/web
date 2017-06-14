@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    #all .top ul {
+      width: 362px;
+      height: 33px;
+      border-top: 1px solid gray;
+      border-left: 1px solid gray;
+      border-right: 1px solid gray;
+      list-style: none;
+      float: right;
+      padding-left: 0;
+    }
+
+    #all .top ul li {
+
+      width: 60px;
+      float: left;
+      text-align: center;
+      line-height: 33px;
+
+    }
+
+    #all {
+      margin: 50px auto;
+      width: 800px;
+      height: 450px;
+    }
+
+    #all .top {
+      height: 50px;
+    }
+
+    #all .top p {
+      float: left;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #all .top a {
+      color: #3f3f3f;
+      text-decoration: none;
+    }
+
+    #all #bottom {
+      height: 396px;
+      border: 1px solid;
+    }
+
+    #all #bottom #topleft {
+      display: inline-block;
+      width: 30px;
+      height: 20px;
+
+
+      position: relative;
+      top: 0px;
+      left: -74px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="all">
+    <div class="top">
+      <p>服装鞋帽</p>
+      <ul id="list">
+        <li><a href="#">服装</a></li>
+        <li><a href="#">服装</a></li>
+        <li><a href="#">服装</a></li>
+        <li><a href="#">服装</a></li>
+        <li><a href="#">服装</a></li>
+        <li value="5"><a href="#">服装</a></li>
+      </ul>
+    </div>
+    <div id="bottom">
+      <div id="topleft"></div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    var bottom = document.getElementById('bottom');
+    var topleft = document.getElementById('topleft');
+    var ul = document.getElementById('list');
+    var li = ul.children;
+
+    var a = [1, 2, 3, 4, 5, 6];
+    for (var i = 0; i < 6; i++) {
+      (function(i){
+      li[i].onmouseover = function(event) {
+
+        topleft.innerHTML = a[i];
+
+        bottom.style.border = '1px solid red';
+        // ul.style.borderBottom = '1px solid red';
+
+        this.style.border = '1px solid red';
+        // this.style.borderBottom = '1px solid rgba(0,0,0,0)';
+
+      }
+      li[i].onmouseleave = function(){
+        bottom.style.border = '1px solid';
+        ul.style.borderBottom = 'none';
+        // ul.style.border = '1px solid gray';
+        this.style.border = 'none';
+
+      }
+    })(i);
+  }
+  </script>
+</body>
+
+</html>

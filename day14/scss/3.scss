@@ -1,0 +1,66 @@
+ul{
+  width: 500px;
+  height: 200px;
+  li{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    &::before{
+      content: "hello world";
+    }
+  }
+}
+
+
+h1{
+  border:{
+    style:solid;
+    left:{
+      width:2px;
+      color:green;
+    }
+    right: {
+      width: 5px;
+      color: red;
+    }
+  }
+}
+
+
+ul{
+  width: 500px;
+  height: 200px;
+  li{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+  @at-root  ::before{
+      content: "hello world";
+    }
+  }
+}
+
+
+
+.parent{
+  color: pink;
+  @at-root .child{
+    font-size: 20px;
+  }
+}
+
+
+.parent{
+  color: pink;
+  @at-root {
+    .child{
+      font-size: 20px;
+    }
+    .name{
+      border: 1px solid red;
+    }
+  }
+
+}

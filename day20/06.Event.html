@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #f {
+      margin-top: 50px;
+      width: 500px;
+      height: 300px;
+      background: yellow;
+    }
+
+    #s {
+      width: 300px;
+      height: 200px;
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <a id="link" href="http://www.baidu.com">百度一下</a>
+  <div id="f">
+    <div id="s"></div>
+  </div>
+  <script type="text/javascript">
+    var f = document.getElementById('f');
+    var s = document.getElementById('s');
+    var link = document.getElementById('link');
+
+    link.onclick = function(event){
+      event.preventDefault();//阻止默认行为
+    };
+
+    f.onclick = function(event){
+      console.log("f click,,,,");
+    };
+
+    s.onclick = function(event){
+      console.log('s click ,,,,,,,,,,,,');
+      event.stopPropagation();//阻止事件传递
+    };
+  </script>
+
+
+</body>
+
+</html>

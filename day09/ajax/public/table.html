@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生信息</title>
+  <style media="screen">
+    .stu {
+      width: 500px;
+      height: 500px;
+      border:1px solid gray;
+      margin: 50px auto;
+      text-align: center;
+      border-collapse: collapse;
+      box-shadow: 0 0 0.5em green;
+    }
+    .stu th,td{
+      height: 100px;
+      border: 1px solid gray;
+    }
+    .color{
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <table class="stu">
+    <tr>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>年龄</th>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+  </table>
+
+
+   <script src="./js/jquery-3.0.0.min.js"></script>
+   <script type="text/javascript">
+     $(".stu tr").hover(function(){
+       $(this).addClass("color");
+     },function(){
+       $(this).removeClass("color");
+     });
+   </script>
+</body>
+</html>

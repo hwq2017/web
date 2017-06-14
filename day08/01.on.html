@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    .d {
+      width: 200px;
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="d"></div>
+  <button id="bt" value="click">取消click事件</button>
+ <script src="./js/jquery-3.0.0.min.js"></script>
+ <script type="text/javascript">
+   // 一个元素可以有多个click 事件，按从上向下的顺序执行，因为alert的优先级较高,所以。。。
+  //  $(".d").click(function(){
+  //    $(this).css("background","orange");
+  //  });
+  //  $(".d").click(function(){
+  //    alert("background become orange");
+  //  });
+  //  $("#bt").click(function(){
+  //     $(".d").click();
+  //  });
+   $(".d").on("click",function(){
+     $(this).html("<p>hello</p>");
+   });
+   $(".d").on("click",function(){
+     $(this).css("border","5px dotted blue");
+   });
+   $("#bt").on("click",function(){
+     $(".d").on("click");
+   });
+ </script>
+
+</body>
+</html>

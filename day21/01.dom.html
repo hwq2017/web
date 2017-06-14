@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获得节点</title>
+</head>
+<body>
+  <div id="f">id div</div>
+  <div class="f1">
+    class div
+     <p>123456</p>
+  </div>
+  <div class="f1">
+    222222
+  </div>
+  <p>klsdagjlas</p>
+
+  <script type="text/javascript">
+    var d = document.getElementById('f');
+    console.log(d.nodeType);
+
+    var d1 = document.getElementsByClassName('f1');
+    console.log(d1);//返回数组
+    console.log(d1[1]);
+
+
+    var p = document.getElementsByTagName('p');
+    console.log(p);//返回数组
+
+  </script>
+</body>
+</html>

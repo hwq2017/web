@@ -1,0 +1,15 @@
+.demo {
+  border: 2px dotted gray;
+  margin: 50px auto; }
+
+.demo1 {
+  opacity: 0.5; }
+
+.demo2 {
+  background: url("1.jpg") no-repeat, url("2.jpg") no-repeat; }
+
+@media screen and (max-width: 500px) {
+  body {
+    color: red; } }
+
+/*# sourceMappingURL=4.css.map */

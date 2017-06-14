@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包</title>
+</head>
+<body>
+   <script type="text/javascript">
+   // 闭包：有权访问另一个函数中的变量的函数
+
+   // 闭包的创建，就是在一个函数内部创建另一个函数
+      /*function fun() {
+        var a = 12;
+        function fun1() {
+          console.log(a);
+        }
+        return fun1;// 必须返回函数
+      }
+      var ret = fun();
+      ret();*/
+
+
+      //闭包的优点 1. 可以减少全局变量的定义，实现变量私有化
+      /*function test() {
+        var count = 0;
+        function test1() {
+          console.log(++count);
+        }
+        return test1;
+      }
+      var ret = test();
+      ret();//1
+      ret();//2
+     */
+
+     
+      //闭包优点 2：可以传参数，动态生成......
+       function fun(arg) {
+         function fun1(str) {
+           return '<div>' + arg + ' ' + str + '</div>';
+         }
+         return fun1;
+       }
+      var ret = fun('hello');
+      console.log(ret('world'));
+
+   </script>
+</body>
+</html>

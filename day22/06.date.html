@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>日期</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var date = new Date();
+
+    console.log(typeof date);//object
+    console.log(date);//等价于date.toString()
+    console.log(date.toString());
+
+    console.log(date.getFullYear());
+    console.log(date.getMonth() + 1);//0~11
+    console.log(date.getDate());
+    console.log(date.getDay());
+
+
+    setInterval(function () {
+      var date = new Date();//获得最新日期
+      console.log(date.getSeconds());
+    },1000);
+  </script>
+</body>
+</html>

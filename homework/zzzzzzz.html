@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>test</title>
+
+<style>
+.banner { position: relative; overflow: auto; }
+.banner li { list-style: none; }
+.banner ul li { float:left; height:200px;}
+</style>
+</head>
+<body>
+<div class="banner">
+<ul>
+<li>This is a slide.</li>
+<li>This is another slide.</li>
+<li>This is a final slide.</li>
+</ul>
+</div>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://unslider.com/unslider.js"></script>
+<script>
+$('.banner').unslider({
+speed: 500, // 滚动速度
+delay: 3000, // 动画延迟
+complete: function() {}, // 动画完成的回调函数
+keys: true, // 启动键盘导航
+dots: true, // 显示点导航
+fluid: false // 支持响应式设计
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>单例</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function Person(name, age) {
+      var adult = true;// 私有变量
+      this.name = name;
+      this.age = age;
+    }
+    var p = new Person();// 通过构造函数创建对象，只是把
+    console.log(p);
+
+    // 最简单的全局单例对象,缺点：属性，方法可以随意访问，任意修改，不够私有
+    var obj = {
+      name: 'lily',
+      age: 21,
+      getName: function() {
+        return name;
+      }
+    }
+    var obj2 = {
+      name: 'lily',
+      age: 21,
+      getName: function() {
+        return name;
+      }
+    }
+    console.log(obj === obj2); // false，虽然obj与obj2的属性完全相同但obj!=obj2,所以obj在全局是唯一的
+  </script>
+</body>
+
+</html>

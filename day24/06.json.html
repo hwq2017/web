@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON</title>
+</head>
+<body>
+  <script type="text/javascript">
+   var tom = {
+     name:'tom',
+     age:22,
+     gender:'man'
+   }
+   var str = JSON.stringify(tom);// json序列化，将tom对象转化为字符串
+   console.log(str);
+
+
+   var ret = JSON.parse(str);// json反序列化：json解析
+   console.log(ret);
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>兼容性事件添加和移除</title>
+</head>
+<body>
+  <button id="btn">点击</button>
+
+  <script type="text/javascript">
+
+     /*
+      addEvent 添加事件
+      @dom 要添加事件的处理对象
+      @eventType 要添加事件的类型
+      @handler 事件注册的处理函数
+     */
+    function addEvent(dom,eventType,handler) {
+      if (dom.addEventListener) {
+        dom.addEventListener(eventType,handler,false);
+      }else if (dom.attachEvent) {
+        dom.attachEvent(oneventType,handler);
+      }else {
+        //DOM0级
+        dom["on"+eventType]=handler;
+      }
+    };
+    function removeEvent(dom,eventType,handler) {
+      if (dom.removeEventListener) {
+        dom.removeEventListener(eventType,handler,false);
+      }else if (dom.detachEvent) {
+        dom.detachEvent(oneventType,handler);
+      }else {
+        //DOM0级
+        // dom["on"+eventType]=handler;
+        dom["on"+eventType]=null;
+      }
+    };
+  </script>
+</body>
+</html>

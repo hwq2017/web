@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Document</title>
+  <style media="screen">
+    body{
+      background: lightblue;
+    }
+    @media screen and (max-width:700px) {
+      body{
+        background: pink;
+      }
+    }
+    @media screen and (orientation:portrait){
+       h1{
+         font-size: 12px;
+       }
+    }
+
+    @media screen and (min-width:500px) and (max-width:1000px) {
+      h1{
+        width: 200px;
+        background:rgb(149, 209, 124);
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>看呆了橄榄色</h1>
+</body>
+</html>

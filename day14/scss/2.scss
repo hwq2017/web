@@ -1,0 +1,10 @@
+$width:300px;
+$height:300px !default;
+$height:200px;
+$back:pink;
+
+p{
+  width: $width;
+  height: $height;
+  background: $back;
+}

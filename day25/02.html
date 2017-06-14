@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>this</title>
+</head>
+<body>
+  <button id="btn">click!</button>
+  <script type="text/javascript">
+
+   var value = 0;
+
+   var obj = {
+     value:10,
+     test:function () {
+       console.log(this.value);
+     }
+   }
+
+    var btn = document.getElementById('btn');
+    btn.value = 100;
+
+    /*
+    // (1)===(2)
+    btn.addEventListener('click',obj.test,false);//100
+    */
+    /*
+    // (2)
+    btn.addEventListener('click',function () {
+      console.log(this.value);
+    },false)
+    */
+
+
+
+    btn.addEventListener('click',function () {
+      console.log(this);
+      obj.test();//10
+    },false);
+
+
+
+
+  </script>
+</body>
+</html>

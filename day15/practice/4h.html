@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+  <style media="screen">
+    body{
+      height: 1500px;
+    }
+    ul{
+      list-style: none;
+    }
+    .head{
+      background-color:#fff;
+      width: 100%;
+      height: 60px;
+      /*border: 1px solid;*/
+    }
+    .header{
+      width: 1190px;
+      height: 60px;
+      line-height: 60px;
+      margin: 0 auto;
+    }
+    .header .login{
+      float: right;
+    }
+    .header .nav{
+      float: right;
+      margin-right: 120px;
+    }
+    .header .nav ul li{
+      float: left;
+      margin-right: 50px;
+    }
+    .header a,.header .login{
+      color: #666;
+    }
+    .header a:hover{
+      text-decoration: none;
+    }
+    .banner{
+      width: 100%;
+      height: 480px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+      background-color: #f5f2ed;
+      background-image: url("https://img.alicdn.com/tps/TB1rx4jMpXXXXarXFXXXXXXXXXX-1615-480.png");
+    }
+
+    .banner .wrap-out{
+      width: 300px;
+      height: 162px;
+      background: #fff;
+      opacity: 0.7;
+      position: absolute;
+      top: 164px;
+      right: 180px;
+    }
+    .banner .wrap{
+      position: absolute;
+      top: 164px;
+      right: 180px;
+      z-index: 100;
+    }
+    .banner .wrap .wrap-in{
+      width: 300px;
+      height: 162px;
+      padding: 25px;
+    }
+    .banner .wrap .wrap-in .for {
+      width: 250px;
+      height: 64px;
+
+      background-color: rgb(255,102,51);
+      border-radius: 4px;
+    }
+    .banner .wrap .wrap-in .for a{
+      display: block;
+      color: #fff;
+    }
+    .banner .wrap .wrap-in .watch{
+      margin-top: 10px;
+      margin-left: 50px;
+      text-align: center;
+      width: 120px;
+      height: 18px;
+    }
+    .title{
+      padding-top: 70px;
+    }
+    .title h2{
+      color: rgb(255,102,51);
+      padding-bottom: 26px;
+      font-weight: bold;
+      font: 100%;
+    }
+    .title p{
+
+      font-size: 18px;
+      color: #666;
+    }
+    .container .row:nth-child(1){
+      margin-bottom: 26px;
+    }
+    .container .row .wh{
+      width: 280px;
+      height: 210px;
+      margin-right: 50px;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+    .container .row .wh .icon{
+      width: 46px;
+      height: 42px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: url("http://img.alicdn.com/tps/TB1rQ01MXXXXXbjXFXXXXXXXXXX-267-111.png");
+    }
+    .icon-1{
+    }
+    .icon-2{
+      background-position: -46px 0;
+    }
+    .icon-3{
+      background-position: -94px 0;
+    }
+    .icon-4{
+      background-position: -142px 0;
+    }
+    .container .row .wh .myicon{
+      /*background-position: 0 -72px;*/
+      background:url("http://img.alicdn.com/tps/TB11jw4MXXXXXbhXVXXXXXXXXXX-672-797.png");
+      position: absolute;
+      left: 30px;
+      bottom: 1px;
+      width: 110px;
+      height: 110px;
+    }
+    .container .row .wh .con{
+      width: 140px;
+      height: 110px;
+      position: absolute;
+      top: 113px;
+      right: -45px;
+      display: table-cell;
+      vertical-align: bottom;
+    }
+    .container .row .myi{
+      width: 290px;
+      height: 350px;
+    }
+    .container .row .col-md-4  i{
+      background: url("../cai1.png") no-repeat;
+      width: 290px;
+      height: 153px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="head">
+  <div class="header navbar-fixed-top">
+    <a href="#"><img src="../cainiao.png" alt=""></a>
+    <div class="login">
+      <a href="#"><span class="glyphicon glyphicon-user"></span> 登录</a> 4001787878
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">入驻标准</a></li>
+        <li><a href="#">资讯中心</a></li>
+        <li><a href="#">常见问题</a></li>
+        <li><a href="#">合作伙伴</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="banner">
+      <div class="wrap-out"></div>
+      <div class="wrap">
+        <div class="wrap-in">
+          <div class="for"><a href="#" class="regnow"><h3></h3></a></div>
+          <div class="watch">
+            <span class="glyphicon glyphicon-eye-open" style="color:rgb(255,102,51);"></span>
+            <a style="color:#333;text-decoration:none;" href="#">查询入驻进度</a>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="pacture">
+
+      </div> -->
+  </div>
+  <div class="container title">
+    <div class="row text-center">
+      <h2>菜鸟驿站介绍</h2>
+      <p>菜鸟驿站是由阿里巴巴旗下菜鸟网络牵头，建立面向社区和校园的物流服务平台，为用户</p>
+      <p>提供包裹代收、代寄等服务，致力于为消费者提供多元化的最后一公里服务。</p>
+    </div>
+    <div class="row">
+  <div class="col-md-3">
+    <div class=" wh">
+      <i class="icon icon-1"></i>
+      <i class="myicon"></i>
+      <div class="con">
+        <p>网购代收</p>
+        <p>线下自提</p>
+        <p>安全保管</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class=" wh">
+      <i class="icon-2 icon"></i>
+      <i class="myicon"></i>
+      <div class="con">
+        <p>网购代收</p>
+        <p>线下自提</p>
+        <p>安全保管</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class=" wh">
+      <i class="icon-3 icon"></i>
+      <i class="myicon"></i>
+      <div class="con">
+        <p>网购代收</p>
+        <p>线下自提</p>
+        <p>安全保管</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="wh">
+      <i class="icon-4 icon"></i>
+      <i class="myicon"></i>
+      <div class="con">
+        <p>网购代收</p>
+        <p>线下自提</p>
+        <p>安全保管</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="row">
+      <h2>合作优势</h2>
+    </div>
+    <div class="row">
+  <div class="col-sm-6 col-md-4 myi">
+    <!-- <div class="thumbnail"> -->
+      <i></i>
+      <div class="caption">
+        <p>通过菜鸟驿站代收、代寄包裹等服务，获得物流收益。</p>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+  </div>
+</body>
+</html>

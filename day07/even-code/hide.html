@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    #clickme {
+      width: 150px;
+      height: 50px;
+      border: 1px solid gray;
+      margin: 50px auto;
+    }
+    #book{
+      display: block;
+      width: 278px;
+      height: 212px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="clickme">
+    click here
+  </div>
+  <img src="../../homework/images/li4.png" id="book" alt="">
+  <script src="../js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+  $('#clickme').click(function() {
+   $('#book').hide('fast', function() {
+  alert('Animation complete.');
+});
+});
+  </script>
+</body>
+</html>

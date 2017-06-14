@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达式</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+         1.直接定义
+         gim 正则表达式的标志
+         g：全局搜索
+         i：不区分大小写
+         m：多行搜索
+         */
+    var pattern = /hello/gim;
+    console.log(typeof pattern); // Object
+
+    /*
+     2.使用RegExp类
+    */
+    var pattern1 = new RegExp('world', 'gim');
+    var pattern1 = new RegExp('world', 'gim');
+    
+    /*
+     测试方法：
+     1.test() 成功返回true
+    */
+    var s = 'hello world google';
+    console.log(pattern.test(s)); //true
+
+
+    /*
+     常用匹配模式
+    */
+
+    console.log(/world/g.test('helloworld')); //true
+    console.log(/[a-z]/.test('213')); //false
+    console.log(/./.test('\n\r'));// false "."除换行和回车之外的任意字符
+    console.log(/\d/.test('123e'));//true
+    console.log(/[^123]/.test('123e'));//true
+    console.log(/[123]/.test('123e'));//true
+    console.log(/^hello$/.test('helloworld'));//false  ^起始位置  $结尾位置
+    console.log(/^hello$/.test('hello'));//true
+    console.log(/^[123]$/.test('hello123'));//false
+    console.log(/1*123/.test('123'));//true  * 重复零次或多次
+    console.log(/1*123/.test('234'));// false
+    console.log(/1+123/.test('123'));//false + 重复1次或多次
+    console.log(/1+123/.test('1123'));//true
+    console.log(/1?2/.test('345'));// false ? 重复零次或1次
+    console.log(/1?2/.test('2345'));// true
+    console.log(/1?2/.test('13245'));// true
+    console.log(/1?2/.test('121212345'));// true
+    console.log(/abc|hello/.test('ch'));//false
+    console.log(/abc|hello/.test('abc'));//true  | 或者
+
+    console.log(/abc*?he/.test('abcworld'));//false
+  </script>
+</body>
+
+</html>

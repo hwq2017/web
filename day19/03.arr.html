@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>数组的遍历及常用方法</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //数组的遍历
+    var a = [1, 2, 3, 4];
+    // for(var i = 0, len = a.length; i < len; i++){
+    //   console.log(a[i]);
+    // }
+    var j = 0;
+    while (j < a.length) {
+      console.log(a[j]);
+      j++;
+    }
+
+    // join方法，连接数组元素
+    var b = [1, 2, 3];
+    console.log(b.join());
+    console.log(b.join("+"));
+
+    var c = new Array(5);
+    console.log(c.join("-")); //4'-'
+
+    //reverse方法，颠倒数组元素顺序
+    console.log(b.reverse());
+
+    //sort 对数组进行排序
+    var d = [3, 1, 6, 2, 5];
+    d.sort();
+    console.log(d);
+
+    d = ["hello", "beijing", "world"];
+    d.sort();
+    console.log(d);
+
+    //concat 连接数组并返回一个新数组
+    var s = a.concat(b, c, d);
+    console.log(s);
+
+    //slice 对数组内容浅复制
+    var a = [1, 2, 3, 4, 5];
+    var b = a.slice(0, 2); //从0位置到1位置，2个元素
+    console.log(b); // 1,2
+    var c = a.slice(); //浅复制数组ａ
+    console.log(c); // 1,2,3,4,5
+    c.push(50);
+    console.log("c = ",c);// 1,2,3,4,5,50
+    console.log("a = ",a);// 1,2,3,4,5
+
+    var d = a.slice(2); //从2位置开始，一直到最后
+    console.log(d); // 3,4,5
+    var e = a.slice(-2); //从倒数第二位置，一直到最后
+    console.log(e); // 4,5
+
+    var e = [1, 2, 4, 6, [2, 3, 4]];
+    var f = e.slice(-2);
+    f[1][1] = 33;
+    console.log(f);//[6,[2,33,4]]
+    console.log(e);//[1,2,4,6,[2,33,4]]
+
+    //splice 对数组元素进行替换和修改
+    var myFish = ["angel", "clown", "mandarin", "surgeon"];
+
+    var removed = myFish.splice(1,0,"hello","beijing");
+    console.log(removed);
+
+    //从第 2 位开始删除 0 个元素，插入 "drum"
+    var removed = myFish.splice(2, 0, "drum");
+    console.log(removed);
+    console.log(myFish);
+    //运算后的 myFish:["angel", "clown", "drum", "mandarin", "surgeon"]
+    //被删除元素数组：[]，没有元素被删除
+
+    //从第 3 位开始删除 1 个元素
+    removed = myFish.splice(3, 1);
+    console.log(removed);
+    console.log(myFish);
+    //运算后的myFish：["angel", "clown", "drum", "surgeon"]
+    //被删除元素数组：["mandarin"]
+
+    //从第 2 位开始删除 1 个元素，然后插入 "trumpet"
+    removed = myFish.splice(2, 1, "trumpet");
+    //运算后的myFish: ["angel", "clown", "trumpet", "surgeon"]
+    //被删除元素数组：["drum"]
+
+
+
+
+    //toString()  toLocaleString()返回一个字符串，表示指定的数组及其元素
+    var a = [1, 2, 3, 4, 5];
+    console.log(a.toString());
+    var b = new Date();
+    console.log(b);
+    var c = [b];
+    console.log(c.toLocaleString()); //转换成本地字符串
+
+
+
+    //forEach
+    var a = [1, 2, 3, 4, 5, 6];
+    var sum = 0;
+    a.forEach(function(e, i, a) {
+      sum += e;
+    });
+    console.log(sum);
+
+
+
+    var a = [1,2,3,4,5];
+    var restult = a.map(function(e){
+      return e + 1;
+    })
+    console.log(restult);
+  </script>
+</body>
+
+</html>

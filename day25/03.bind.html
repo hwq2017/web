@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>内置函数--bind绑定</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var value = 10;
+
+    var obj = {
+      value : 20,
+      handler:function () {
+        console.log(this.value);
+      }
+    }
+
+    function fun() {
+      var value = 100;
+      console.log(this.value);
+    }
+    /*
+     将fun()函数进行绑定后，返回值是一个新函数，即在原函数fun()的基础上，将this 值始终绑定为obj的新函数
+    */
+    var newFun = fun.bind(obj);
+    console.log(newFun);
+    newFun();
+    var newHandler = obj.handler.bind(obj);
+    newHandler();
+  </script>
+</body>
+</html>

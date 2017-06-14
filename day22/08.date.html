@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>日期转换字符串</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    var d = new Date();
+
+    console.log(d.toDateString());//星期几 月 日 年
+    console.log(d.toLocaleDateString());// 年/月/日
+    console.log(d.toLocaleTimeString());// 时:分:秒
+    console.log(d.toTimeString());// 时:分:秒  时区
+    console.log(d.toUTCString());// Tue, 06 Jun 2017 11:33:58 GMT
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>xml解析</title>
+</head>
+<body>
+  <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var stu = "<rss version='2.0'><name>lisi</name><age>22</age></rss>";
+
+    //使用jQuery 的 parseXML()解析
+    var ret = $.parseXML(stu);
+    console.log(ret);// DOM对象
+    console.log($(ret).find('name').text());
+    console.log($(ret).find('age').text());
+
+
+    var stu1 = "<rss version='2.0'><name>lisi</name><age>22</age></rss>";
+    var str = new DOMParser();
+    console.log(str);
+    stu1 = str.parseFromString(str,'application/xml');
+    console.log(stu1);//DOM对象
+  </script>
+
+</body>
+</html>

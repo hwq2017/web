@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>借用构造函数实现继承</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function Person(name,age) {
+      this.name = name;
+      this.age = age;
+      this.num = [1,23,4,2,3,2];
+    }
+
+    Person.prototype.getName = function () {
+      return this.name;
+    }
+
+    function Student(name,age,score) {
+      // 直接调用了 Person 构造函数
+      Person.call(this,name,age);//相当于 this.name = name;this.age = age;this.num = [1,23,4,2,3,2];
+      this.score = score;
+    }
+
+    /*
+      借用构造函数继承，只能继承函数内部的属性或方法，让每个对象都能继承，互不影响
+      但原型上的方法或属性不能继承。
+    */
+    var stu = new Student('lisi',12,78);
+    console.log(stu);
+    //stu.getName();
+
+
+    // 借用构造函数实现继承 解决了原型链 的 存在的问题
+    var one = new Student('lilu',21,122);
+    one.num.push(34);
+    console.log(one);
+
+    var two = new Student('hehe',13,65);
+    console.log(two);
+
+
+  </script>
+</body>
+</html>

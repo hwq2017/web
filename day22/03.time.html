@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时器</title>
+</head>
+<body>
+  <div id="f">计时开始。。。</div>
+  <script type="text/javascript">
+    var f = document.getElementById('f');
+    var id,num = 0;
+    function outPut() {
+      num++;
+      f.innerHTML = num;
+      if (num == 10) {
+        console.log(id);// 9
+
+        clearTimeout(id);
+        return;
+      }
+      id = setTimeout(outPut,1000);
+    }
+    outPut();
+  </script>
+</body>
+</html>

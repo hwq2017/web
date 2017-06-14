@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>原型链继承问题！！！</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    function Super() {
+      this.colors = ['red','yello','blue'];
+    }
+
+    function Sub() {
+
+    }
+    Sub.prototype = new Super();
+    Sub.prototype.constructor = Sub;
+
+    var one = new Sub();
+    console.log(one);
+  //  one.colors.push("green"); //修改了原型上继承来的属性，即Super的属性，会影响 two
+  //  console.log(one);
+    one.colors = 'pink';// 定义了自己的属性，不影响 two
+
+
+    var two = new Sub();
+    console.log(two);
+  </script>
+</body>
+</html>

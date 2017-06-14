@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ie版本下的event对象的属性和方法</title>
+  <style media="screen">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #f {
+    margin-top: 50px;
+    width: 500px;
+    height: 300px;
+    background: yellow;
+  }
+
+  #s {
+    width: 300px;
+    height: 200px;
+    background: blue;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">
+    <div id="s"></div>
+  </div>
+
+  <a id="link" href="http://www.baidu.com">百度</a>
+
+  <script type="text/javascript">
+    var f = document.getElementById('f');
+    var s = document.getElementById('s');
+    var link = document.getElementById('link');
+
+    f.onclick = function (event) {
+      console.log("-----------f-----------");
+      /*
+        解决浏览器兼容性问题
+      */
+      var event = event || window.event;
+
+      console.log(window.event);//ie浏览器
+      console.log(window.event.srcElement);//与DOM中的target属性相同
+      console.log(window.event.currentTarget);
+
+      window.event.cancelBubble = true;//取消事件冒泡，等价于event.stopPropagation();
+    }
+    s.onclick = function (event) {
+      console.log("--------------s-----------");
+      console.log(window.event);//ie浏览器
+      console.log(window.event.srcElement);//与DOM中的target属性相同
+    }
+
+    link.onclick = function (event) {
+      window.event.returnValue = false;//取消事件的默认行为，等价于 event.preventDefault();
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js原生实现轮播图</title>
+  <style media="screen">
+  .box{
+    height: 200px;
+    width: 400px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    /*display: flex;*/
+  }
+
+ .box .img{
+   width: 1600px;
+   height: 200px;
+   margin: 0 auto;
+   position: absolute;
+   z-index: 1;
+
+ }
+ .box .img img{
+   height: 200px;
+   width: 400px;
+   float: left;
+ }
+
+  .box .left,.box .right{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: rgba(120, 110, 210, 0.2);
+    cursor: pointer;
+    z-index: 2
+
+  }
+    .box .left{
+      position: absolute;
+      top: 90px;
+      left: 0px;
+
+    }
+    .box .right{
+      position: absolute;
+      top: 90px;
+      right: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="img">
+
+        <img id="img0" src="./images/cake1.jpg" alt="">
+        <img id="img1" src="./images/cake2.jpg" alt="">
+
+        <img id="img2" src="./images/cake3.jpg" alt="">
+        <img id="img3" src="./images/cake4.jpg" alt="">
+
+    </div>
+
+    <div class="left"><</div>
+    <div class="right">></div>
+  </div>
+  <script type="text/javascript">
+
+
+
+    var left = document.getElementsByClassName('left')[0];
+    var right = document.getElementsByClassName('right')[0];
+    var img = document.getElementsByClassName('img')[0];
+
+    function offset(num) {
+       var newleft = img.offsetLeft + num;
+       img.style.left = newleft + 'px';
+    }
+    left.onclick = function () {
+      //  img.style.left = img.offsetLeft  -400 + 'px';
+
+       offset(-400);
+      if(img.offsetLeft == -1600){
+        img.style.left = '0px';
+      }
+    }
+    right.onclick = function () {
+      // img.style.left = img.offsetLeft + 400 + 'px';
+      offset(400);
+      if(img.offsetLeft == 400){
+        img.style.left = '-1200px';
+      }
+
+    }
+    var timer;
+    function play() {
+
+      timer = setInterval(function () {
+        left.onclick();
+        if (img.offsetLeft == -1600) {
+            // clearInterval(timer);
+            img.style.left = img.offsetLeft + 1600 + 'px';
+        }
+      },2000)
+    }
+    img.onmouseout = play();
+    img.onmouseover = function () {
+       clearInterval(timer);
+    }
+  </script>
+</body>
+</html>

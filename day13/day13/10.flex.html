@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			height: 200px;
+
+			/*父元素设置display:flex，表示为伸缩盒子*/
+			display: flex;
+		}
+
+		.f li {
+			width: 300px;
+			height: 100px;
+			border: 1px solid red;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin: 50px auto;
+			border:1px solid #123456;
+			padding: 10px;
+			/*display: flex;*/
+			perspective: 50px;
+			transform-style: preserve-3d;
+			animation: test 10s linear infinite;
+
+		}
+		/*.box div:nth-child(1){
+			width: 700px;
+			height: 100px;
+			background: #112200;
+		}*/
+		.box div:nth-child(1){
+			width: 160px;
+			height: 100px;
+			margin: 40px 20px;
+			background: #952000;
+			transform: rotateX(10deg);
+		}
+		/*@keyframes test {
+			from{
+				perspective: 50px;
+			}
+			to{
+				perspective: 300px;
+			}
+		}*/
+	</style>
+</head>
+<body>
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+
+
+<div class="box">
+	<!-- <div></div> -->
+	<div></div>
+</div>
+
+</body>
+</html>

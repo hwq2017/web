@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组合(原型链 + 构造函数)</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+ /*
+  组合继承，为了解决：
+  1.原型链继承问题：所有实例共享属性，修改任意一个会影响其他实例
+  2.构造函数继承问题：在构造函数中定义方法时，会造成每次创建实例都会重复的定义
+ */
+
+
+  function Person(name,age) {
+    this.name = name;
+    this.age = age;
+    this.num = [1,23,4,2,3,2];
+  }
+
+  Person.prototype.getName = function () {
+    return this.name;
+  }
+
+  function Student(name,age,score) {
+
+    Person.call(this,name,age);
+    this.score = score;
+  }
+
+  Student.prototype = new Person();
+  Student.prototype.constructor = Student;
+
+  var stu = new Student('李四',20,89);
+  console.log(stu.getName());
+
+
+
+
+
+
+  </script>
+</body>
+</html>

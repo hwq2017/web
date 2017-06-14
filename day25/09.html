@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数节流</title>
+  <style media="screen">
+    #t {
+      border: 1px solid red;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    tr,td{
+      width: 300px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">Click!!!</button>
+  <table id="t">
+    <tbody>
+
+    </tbody>
+  </table>
+  <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+  <script type="text/javascript">
+
+    var per = ['lisi',12,78];
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+      alert('click!!!');
+    }
+    var num = 0;
+    function table() {
+
+      for (var i = 0; i < 100; i++) {
+        $('#t tbody').append('<tr><td>' + per[0] + '</td><td>' + per[1] + '</td><td>' + per[2] + '</td></tr>');
+      }
+      num++;
+      if(num == 10000){
+        clearTimeout(id);
+        return;
+      }
+      var id = setTimeout(table,100);
+
+    }
+    table();
+    /*
+    for (var i = 0; i < 1000; i++) {
+      $('#t tbody').append('<tr><td>' + per[0] + '</td><td>' + per[1] + '</td><td>' + per[2] + '</td></tr>');
+    }
+    */
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+  <style media="screen">
+    body{
+      height: 2000px;
+    }
+    .mynav{
+      background: #fff;
+    }
+    .mynav .login{
+      margin-top: 15px;
+      float: right;
+    }
+    .mynav .collapse{
+      float: right;
+      margin-right: 120px;
+    }
+    .myfluid{
+      width: 100%;
+      height: 480px;
+      background-color: #f5f2ed;
+      margin-top: 60px;
+      position: relative;
+      /*background-image: url("https://img.alicdn.com/tps/TB1rx4jMpXXXXarXFXXXXXXXXXX-1615-480.png");*/
+    }
+    .myfluid .background-img{
+      display: block;
+      width:1500px;
+      height: 480px;
+      overflow: hidden;
+      float: left;
+    }
+    .myfluid .wrap-out{
+      width: 300px;
+      height: 162px;
+      background: #fff;
+      opacity: 0.7;
+      position: absolute;
+      top: 164px;
+      right: 180px;
+    }
+    .myfluid .wrap-on{
+      position: relative;
+      padding: 25px;
+    }
+    .myfluid .wrap-on .complete{
+      display: block;
+      width: 250px;
+      height: 64px;
+      margin: 15px 0;
+      background-image: url("http://img.alicdn.com/tps/TB11jw4MXXXXXbhXVXXXXXXXXXX-672-797.png");
+      background-repeat: no-repeat;
+      background-position: 0 -692px;
+      position: absolute;
+      top: 185px;
+      right: 188px;
+    }
+    .myfluid .wrap-on .watch{
+      width: 120px;
+      position: absolute;
+      top: 275px;
+      right: 245px;
+    }
+    .jieshao{
+      padding-top:70px;
+    }
+
+    .jieshao .row .text{
+      font-size: 18px;
+      color: #666;
+    }
+    .jieshao .row .mytext{
+      width: 280px;
+      height: 210px;
+      margin-right: 10px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+    .jieshao .row .mytext .icon-1{
+      background: url("http://img.alicdn.com/tps/TB1rQ01MXXXXXbjXFXXXXXXXXXX-267-111.png");
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 46px;
+      height: 42px;
+    }
+    .jieshao .row .mytext .first{
+      background-position: 0 0;
+    }
+    .jieshao .row .mytext .second{
+      background-position: -46px 0;
+    }
+    .jieshao .row .mytext .third{
+      background-position: -94px 0;
+    }
+    .jieshao .row .mytext .fouth{
+      background-position: -142px 0;
+    }
+    .jieshao .row .mytext .icon-2{
+      background: url("http://img.alicdn.com/tps/TB11jw4MXXXXXbhXVXXXXXXXXXX-672-797.png");
+      position: absolute;
+      left: 30px;
+      bottom: 1px;
+      width: 110px;
+      height: 110px;
+      /*z-index: 100;*/
+    }
+    .jieshao .row .mytext .one{
+      background-position: 0 -72px;
+    }
+    .jieshao .row .mytext .two{
+      background-position: -120px -72px;
+    }
+    .jieshao .row .mytext .three{
+      background-position: -240px -72px;
+    }
+    .jieshao .row .mytext .four{
+      background-position: -353px -72px;
+    }
+    .jieshao .row .mytext .con{
+      width: 140px;
+      height: 110px;
+      font-size:18px;
+      color: #666;
+      position: absolute;
+      top: 110px;
+      right: -45px;
+
+    }
+    .jieshao .row .mytext .con1{
+      height: 55px;
+      position: absolute;
+      top: 145px;
+      right: -45px;
+    }
+    .hezuo{
+      width: 100%;
+      height: 574px;
+      background: url("http://img.alicdn.com/tps/TB1qKeIMXXXXXbWXFXXXXXXXXXX-1600-162.jpg") center bottom no-repeat #f9f9f9;
+      margin-top: 110px;
+    }
+    .hezuo .row .myhe{
+      width: 290px;
+      height: 350px;
+      background: #fff;
+      padding: inherit;
+      /*border: 1px solid;*/
+    }
+    .hezuo .row .myhe .des p{
+      font-size: 18px;
+      color: #666;
+      margin: 15px;
+
+    }
+    .hezuo .row .myhe i{
+      display: block;
+      width: 100%;
+      height: 153px;
+      background-image: url("http://img.alicdn.com/tps/TB11jw4MXXXXXbhXVXXXXXXXXXX-672-797.png");
+          background-repeat: no-repeat;
+    }
+    .hezuo .row .myhe .hzi1{
+      background: url("http://img.alicdn.com/tps/TB1eDf5KVXXXXXaXFXXXXXXXXXX-371-360.png") -81px -17px no-repeat;
+    }
+    .hezuo .row .myhe .hzi2{
+
+      background: url("http://img.alicdn.com/tps/TB1eDf5KVXXXXXaXFXXXXXXXXXX-371-360.png") -81px -206px no-repeat;
+    }
+    .hezuo .row .myhe .hzi3{
+      background-position: 0 -528px;
+      /*background: url("http://img.alicdn.com/tps/TB11jw4MXXXXXbhXVXXXXXXXXXX-371-360.png") -81px -206px no-repeat;*/
+    }
+    .container .box{
+      height: 510px;
+      margin: 50px auto;
+      position: relative;
+      display: flex;
+    }
+  .container  .box .img{
+      width: 1188px;
+      height: 510px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .container .box .img ul{
+       list-style: none;
+       width:4752px;
+       /*animation: run 5s linear 1s infinite;*/
+     }
+     ul li{
+       float: left;
+     }
+
+  .round{
+    width:200px;
+    height: 30px;
+    position: absolute;
+    top: 169px;
+    left: 533px;
+  }
+  .round div a{
+    width: 6px;
+    height: 6px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.4);
+    float: right;
+  }
+  .round a:hover{
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    background:rgba(255,255,255,0.4);
+  }
+  .hezuoliu .row i{
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: url("http://img.alicdn.com/tps/TB1rQ01MXXXXXbjXFXXXXXXXXXX-267-111.png") no-repeat #fff;
+  }
+  .hezuoliu .row .type1{
+    background-position: 0 -45px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .hezuoliu .row .col-md-3{
+    position: relative;
+  }
+  .hezuoliu {
+    padding: 80px 0;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar-default mynav navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#"><img src="../cainiao.png" alt=""></a>
+      </div>
+      <div class="login">
+        <a style="color:#666;" href="#"><span class="glyphicon glyphicon-user"></span> 登录</a> 4001787878
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">入驻标准</a></li>
+          <li><a href="#">资讯中心</a></li>
+          <li><a href="#">常见问题</a></li>
+          <li><a href="#">合作伙伴</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid myfluid">
+    <img class="background-img" src="https://img.alicdn.com/tps/TB1rx4jMpXXXXarXFXXXXXXXXXX-1615-480.png" alt="">
+    <div class="wrap-out"></div>
+    <div class="wrap-on">
+      <a href="#" class="complete"></a>
+      <div class="watch">
+        <span class="glyphicon glyphicon-eye-open" style="color:rgb(255,102,51);"></span>
+        <a style="color:#333;text-decoration:none;" href="#">查询入驻进度</a>
+      </div>
+    </div>
+  </div>
+  <div class="container jieshao">
+    <div class="row text-center">
+      <h1 style="color:rgb(255,102,51); font-weight:bold;padding-bottom:26px;">菜鸟驿站介绍</h1>
+      <p class="text">菜鸟驿站是由阿里巴巴旗下菜鸟网络牵头，建立面向社区和校园的物流服务平台，为用户</p>
+      <p class="text">提供包裹代收、代寄等服务，致力于为消费者提供多元化的最后一公里服务。</p>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mytext ">
+        <i class="icon-1 first"></i>
+        <i class="icon-2 one"></i>
+        <div class="con">
+          <p>网购代收</p>
+          <p>线下自提</p>
+          <p>安全保管</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mytext ">
+        <i class="icon-1 second"></i>
+        <i class="icon-2 two"></i>
+        <div class="con">
+          <p>便捷代寄</p>
+          <p>线上下单</p>
+          <p>在线支付</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mytext">
+        <i class="icon-1 third"></i>
+        <i class="icon-2 three"></i>
+        <div class="con con1">
+          <p>个性化服务</p>
+          <p>特色服务</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mytext">
+        <i class="icon-1 fouth"></i>
+        <i class="icon-2 four"></i>
+        <div class="con con1">
+          <p>便民服务</p>
+          <p>生活服务</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container hezuo">
+     <h1 style="color:rgb(255,102,51); font-weight:bold; text-align:center;padding:70px 0;">合作优势</h1>
+     <div class="row ">
+       <div class="col-md-4 myhe col-md-offset-2">
+         <i class="hzi1"></i>
+         <div class="des">
+           <p>通过菜鸟驿站代收、代寄包裹等服务，获得物流收益。</p>
+         </div>
+       </div>
+       <div class="col-md-4 myhe col-md-offset-1">
+         <i class="hzi2"></i>
+         <div class="des">
+           <p>通过稳定的包裹量给店铺带来客流量，将客流量转为店铺营业额。</p>
+           <p>享受阿里巴巴线上资源落地的优先权，为店铺带来更多增值收益。</p>
+         </div>
+       </div>
+       <div class="col-md-4 myhe col-md-offset-1">
+         <i class="hzi3"></i>
+         <div class="des">
+           <p>提供专业操作系统，免费发送短信。</p>
+           <p>完善的业务技能、运营技巧等系列培训。</p>
+           <p>不定期宣传，提升店铺影响力。</p>
+         </div>
+       </div>
+     </div>
+
+  </div>
+  <div class="containe hezuoliu">
+    <h1 style="color:rgb(255,102,51); font-weight:bold; text-align:center;padding:70px 0;">合作流程</h1>
+    <div class="row">
+      <div class="col-md-3 ">
+        <i class="type1 type"></i>
+      </div>
+      <div class="col-md-3 type"></div>
+      <div class="col-md-3 type"></div>
+      <div class="col-md-3 type"></div>
+    </div>
+  </div>
+  <div class="container">
+    <h1 style="color:rgb(255,102,51); font-weight:bold; text-align:center;padding-top:70px;">站点风采</h1>
+    <div class="box">
+      <div class="img">
+        <ul>
+          <li><img id="img1" src="../z1.jpg" alt=""></li>
+          <li><img id="img2" src="../z2.png" alt=""></li>
+          <li><img id="img3" src="../z3.png" alt=""></li>
+          <li><img id="img4" src="../z4.jpg" alt=""></li>
+        </ul>
+      </div>
+      <div class="round">
+         <div class="d1"><a href="#img1"></a></div>
+         <div class="d2"><a href="#img2"></a></div>
+         <div class="d3"><a href="#img3"></a></div>
+         <div class="d4"><a href="#img4"></a></div>
+      </div>
+    </div>
+  </div>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://unslider.com/unslider.js"></script>
+  <script src="../js/jquery-3.0.0.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

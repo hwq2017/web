@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>创建对象</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+         面向对象 ：所有的操作都以对象为中心，对象都有属性和方法。
+        */
+
+    // 创建对象
+
+    // 1: 使用已有的构造函数创建
+    var date = new Date();
+
+    // 2: 直接使用字面量创建
+    var person = {}; // 空对象
+    person.name = 'lisi';
+    person.age = 12; //属性
+    person.getName = function() {
+      return this.name;
+    }; // 对象的方法
+    console.log(person);
+    console.log(person.getName());
+
+    var stu = {
+      'name': 'zhangsan', // 属性名可以加 引号
+      age: 23,
+      score: 89,
+      getName: function() {
+        console.log(this.name);
+      }
+    };
+    console.log(stu.name); // 使用 . 访问时 不能加引号
+    console.log(stu['age']); // 使用方括号时 属性加引号
+    stu.getName();
+
+    // 3: 自定义构造函数
+    function Person(name, age) {
+      console.log(this);
+      this.name = name;
+      this.age = age;
+      this.getName = function() {
+        return this.name;
+      };
+      this.setName = function(newName) {
+        this.name = newName;
+      };
+    }
+
+    /*
+     // 直接调用Person的结果！！！
+     var one = Person('loly',22);
+     console.log(one);// undefined
+     // 在浏览器的js中，所有的全局变量都是window属性
+     //所有浏览器都支持 window 对象。它表示浏览器窗口。
+     //所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。
+     //全局变量是 window 对象的属性。 全局函数是 window 对象的方法。
+     //甚至 HTML DOM 的 document 也是 window 对象的属性之一：
+     console.log(window.name);
+     console.log(name);
+     */
+
+
+    var one = new Person('lily', 12);
+    console.log(one.getName());
+    one.setName('王小二');
+    console.log(one.getName());
+
+
+  /*
+  原型模式 + 构造 ，将共有的属性或方法用 prototype 属性定义，提高代码运行效率
+  创建的每个函数都有一个 prototype (原型) 属性,这个属性是一个指针,指向一个对象
+  */
+    function Teacher(name,salary) {
+      this.name = name;
+      this.salary = salary;
+    }
+    Teacher.prototype.getSalary = function () {
+      return this.salary;
+    };
+    var tec = new Teacher('张李',3000);
+    console.log(tec.name);
+    console.log(tec.getSalary());
+
+  </script>
+</body>
+
+</html>

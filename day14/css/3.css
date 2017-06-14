@@ -1,0 +1,43 @@
+ul {
+  width: 500px;
+  height: 200px; }
+  ul li {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px; }
+    ul li::before {
+      content: "hello world"; }
+
+h1 {
+  border-style: solid;
+  border-left-width: 2px;
+  border-left-color: green;
+  border-right-width: 5px;
+  border-right-color: red; }
+
+ul {
+  width: 500px;
+  height: 200px; }
+  ul li {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px; }
+    ::before {
+      content: "hello world"; }
+
+.parent {
+  color: pink; }
+  .child {
+    font-size: 20px; }
+
+.parent {
+  color: pink; }
+  .child {
+    font-size: 20px; }
+
+  .name {
+    border: 1px solid red; }
+
+/*# sourceMappingURL=3.css.map */

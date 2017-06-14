@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>data</title>
+</head>
+<body>
+  <button>按钮0</button>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <h1></h1>
+
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      // $("button").click(function(){
+      //   $("h1").html($(this).text());
+      // });
+
+
+      for(var i = 0; i < 4; i++){
+        $("button").eq(i).click(i,function(event){
+          $("h1").html(event.data);
+        })
+      }
+    });
+  </script>
+</body>
+</html>

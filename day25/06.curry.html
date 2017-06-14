@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数柯里化</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function price(rate,cont) {
+      console.log(this);
+      return rate * cont;
+    }
+    price(0.5,100);
+    function curry(fn,rate) {
+      return fn.bind(null,rate);
+    }
+
+    var food = curry(price,0.8);
+    console.log(food);
+    console.log(food(1000));
+  </script>
+</body>
+</html>

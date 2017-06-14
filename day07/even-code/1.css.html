@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style media="screen">
+    div {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      float: left;
+    }
+    .t {
+      width: 500px;
+      height: 300px;
+      border: 1px solid gray;
+      text-align: center;
+
+      /* 去掉表格单元格之间的间隙*/
+      border-collapse: collapse;
+      margin: 0px auto;
+    }
+    .t td,
+    .t th{
+      border: 1px solid gray;
+
+    }
+  </style>
+</head>
+<body>
+    <span class="s"></span>
+    <div style="background:blue;"></div>
+    <div style="background:green;"></div>
+    <div style="background:red;"></div>
+    <div style="background:purple;"></div>
+
+    <table class="t">
+      <caption><h3>学生信息表</h3></caption>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+      <tr>
+        <td>张三</td>
+        <td>20</td>
+        <td>男</td>
+      </tr>
+   </table>
+
+
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      $("div").click(function (){
+        // var colors = $(this).css("background-color");
+        // $(".s").html("<p>color is"+ &nbsp+ colors + "</p>");
+        $(this).hide();
+      });
+
+      $(".t").click(function(){
+        $(this).find("caption").css("color","red");
+      });
+      $(".t tr").click(function(){
+        
+      });
+    </script>
+</body>
+</html>

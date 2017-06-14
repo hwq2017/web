@@ -1,0 +1,9 @@
+$color:red;
+$word:15px;
+$strong:bolder;
+
+p{
+  color:$color;
+  font-size: $word;
+  font-weight: $strong;
+}

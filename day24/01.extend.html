@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>继承</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    //原型链继承
+    function Animal(name, age) {
+      this.name = name;
+      this.age = age;
+      // console.log(this); // 在全局调用Animal(),this==Window
+    }
+    Animal.prototype.getName = function() {
+      return this.name;
+    }
+    // Animal();
+
+    function Cat(name) {
+      console.log(this);
+      this.name = name;
+    }
+
+    //Cat.prototype = new Animal();
+
+    Cat.prototype.getName = function() {
+      return 'cat';
+    }
+    Cat.prototype.age = 1;
+
+    console.log(Cat.prototype.constructor);/*
+     function Animal(name,age){} 原构造器因Cat.prototype = new Animal();被覆盖了
+     可重新设置一下 Cat.prototype.constructor = Cat;*/
+
+    // 继承了Animal 的属性和方法
+    Cat.prototype = new Animal('hhe',23);// 会将Cat 里 原型上的同名属性或方法覆盖,可将其放在上面避免覆盖
+
+    var cat = new Cat('miao');
+
+    console.log(cat.name);
+    console.log(cat.age);//23
+    console.log(cat.getName());//miao
+
+  </script>
+</body>
+
+</html>

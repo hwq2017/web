@@ -1,0 +1,33 @@
+@mixin center-block {
+    margin: 50px auto;
+}
+.demo{
+   border: 2px dotted gray;
+   @include center-block;
+}
+
+
+@mixin opacity($i) {
+  opacity: $i/100;
+}
+.demo1{
+  @include opacity(50);
+}
+
+@mixin image($image...) {
+  background: $image;
+}
+.demo2{
+  @include image(url("1.jpg") no-repeat,url("2.jpg") no-repeat) ;
+}
+
+
+@mixin screen1($i) {
+  @media screen and(max-width:$i){
+    @content;
+  }
+}
+
+@include screen1(500px){
+  body{color: red}
+};

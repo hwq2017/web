@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>call()与apply()</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+    call()与apply()的区别
+
+    apply:方法能劫持另外一个对象的方法，继承另外一个对象的属性.
+
+    Function.apply(obj,args)方法能接收两个参数
+    obj：这个对象将代替Function类里this对象
+    args：这个是数组，它将作为参数传给Function（args-->arguments）
+
+    call:和apply的意思一样,只不过是参数列表不一样.
+
+    Function.call(obj,[param1[,param2[,…[,paramN]]]])
+    obj：这个对象将代替Function类里this对象
+    params：这个是一个参数列表
+    */
+
+
+    function Super() {
+      this.getSuper = function() {
+        console.log(this);
+      };
+    }
+
+    function Sub() {
+      this.getSub = function() {
+        console.log(this);
+      };
+    }
+    var sub = new Sub();
+    var sup = new Super();
+    // console.log(sub);
+    sup.getSuper.call(sub); // 相当于将Super里的this变为sub
+    sup.getSuper.apply(sub);
+
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.num = [1, 23, 4, 2, 3, 2];
+    }
+
+
+    function Student(name, age, score) {
+
+      //console.log(this); //Student{}
+      //  Person.call(this,name,age);
+      return Person.apply(this, arguments);
+      this.score = score;
+    }
+    //var stu = new Student('haha', 13, 78);
+    //console.log(stu.name, stu.age, stu.score);
+    var s = Student();
+    console.log(typeof s);
+  </script>
+</body>
+
+</html>

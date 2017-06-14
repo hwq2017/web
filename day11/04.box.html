@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>box</title>
+  <style media="screen">
+  .d{
+    width: 300px;
+    height: 200px;
+    background: red;
+    padding: 10px;
+    box-sizing: content-box; /*普通盒子,宽高只是盒子内容的宽高，大小可能变*/
+    margin-bottom: 50px;
+  }
+  .d1{
+    width: 300px;
+    height: 200px;
+    background: red;
+    padding: 10px;
+    box-sizing: border-box; /*大小不变盒子*/
+
+  }
+  </style>
+</head>
+<body>
+  <div class="d"></div>
+  <div class="d1"></div>
+</body>
+</html>

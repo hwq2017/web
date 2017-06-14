@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MI FadeIn</title>
+  <style media="screen">
+    div{
+      width: 1226px;
+      height: 460px;
+      background: url("./images/mi1.jpg");
+    }
+    .btn{
+      width: 400px;
+      height: 18px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<div class="picture">
+  <div class="btn">
+  <button></button>
+  <button></button>
+  <button></button>
+  <button></button>
+  <button></button>
+  </div>
+</div>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      if (var i = 0;i<5;i++) {
+        $("button").eq(i).click(i,function(event){
+          $(".picture").css("background","url(./images/"+even.data +".jpg)")
+        })
+      }
+    });
+  </script>
+</body>
+</html>
